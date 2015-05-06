@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Take Action</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.featureList-1.0.0.js"></script>
+
+<script src="Cheng.js"></script> 
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+
+
+</head>
+
+<style type="text/css">
+    ul{
+        padding-left: 10px;
+    }
+</style>
+
+
+<body>
+
+    <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;">
+                <div style="display:inline;float:left;  " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, Sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="buttonBackground">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main" style="padding-top:190px;">
+        <div><h3>   Take Action!</h3></div>
+        <hr style="border:solid 1px black;">
+
+        <p style="margin-top:10px;padding:5px;">Although it’s always beneficial to the environment to reduce electricity usage, there are some times when you can have a greater impact. Here are some suggestions of actions you can take part in during high index or low index times.</p>
+
+        <div style=" height:450px;">
+            <div style="float:left;border-right:1px solid black;width:490px;height:350px;padding:20px;">
+                <p style="color:#A0D75A"><big><big>Now is good time to:</big></big></p>
+                <ul>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Charge your batteries</li>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Charge your electric car</li>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Run your full dishwasher load</li>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Do laundry- remember to use full loads</li>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Cook with electrical appliances</li>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Shower or use hot water if you have an electric water heater</li>
+                    <li style="background: url(images/take1.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Charge your laptops, phones and tablets</li>
+                    <li style="background: url(images/moregreen.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;"></li>
+                </ul>
+            </div>
+            <div style="float:left;width:485px;height:350px;padding:20px;">
+                <p style="color:#FF2200"><big><big>Now is good time to:</big></big></p>
+                <ul>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Switch to battery power</li>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Spend time outside</li>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Turn off lights</li>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Avoid using electric appliances</li>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Do outdoor chores</li>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Visit a community space to take advantage of shared energy</li>
+                    <li style="background: url(images/take2.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;">Bring work to a nearby coffee shop or library</li>
+                    <li style="background: url(images/morered.jpg);height:30px;margin:10px;line-height:30px;font-size:17px;padding-left:10px;font-weight:bold;color:#666666;"></li>
+                </ul>
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+    <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

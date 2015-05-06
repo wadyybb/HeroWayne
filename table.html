@@ -1,0 +1,823 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Hero</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<script src="Cheng.js"></script>
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+<style type="text/css">
+#biaoge{
+	margin:6px;
+	padding:2px;
+	text-align:center;
+}
+
+#biaoge table{
+	margin:0px auto;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+    
+     <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;overflow:hidden;">
+                <div style="display:inline;float:left;  " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="buttonBackground" style="margin-top:6px;">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- header ends -->
+    <!-- content -->
+    
+     <div id="main" style="margin-top:90px;border:1px solid #8FD7F4;border-radius:1em;">
+    
+    <div style="padding:30px;">
+
+   
+  	<table width=100%>
+	   <tr><td>
+	              <h3 style="height: 20px;"  id="Place"></h3>
+	             <div style="display:none;">
+	             <h2>Location longitude and latitude is(</h2><h2  id="lngtidue"></h2><h2 >,</h2><h2  id="latude"></h2><h2 >)</h2> <h2 style="clear:both"></h2>   
+	             </div>         
+	             <div>       
+	            <br />   <h2 style="display:none;">LMP is </h2><h2 style="display:none;" id="lmpValue"></h2>
+	              <h2 style="display:none;">Nearest CPN is </h2><h2  style="display:none;" id="CPNvalue"></h2>            
+	            </div>  
+	   </td>
+	   </tr>
+
+	</table>
+
+<!-- 	<div  style="position:absolute; top:230px;right:240px;" >
+		<h2>Subscribe your daily air quality:</h2></br>
+	    <form action="smtpgmail.php" method="post">
+		    <table class="mytable">
+			    <tr>
+			    	<td><input style="border-style: solid; border-width: 1px;" type="email" placeholder="Email" name="email" /></td>
+				</tr>
+			    <tr>
+			    	<td><input type="submit" name="send" value="Subscribe" /></td>
+			    	<td><input type="hidden" name="lat" id="email_lat" value="" /></td>
+    				<td><input type="hidden" name="lng" id="email_lng" value="" /></td>
+				</tr>
+		    </table>
+	    </form>
+	</div> -->
+
+
+
+
+   <div style="margin-left:30px;"> <br>
+<big><big>  <strong>
+   Input <i>zipcode</i> or <i>city name</i> here to search: 
+   </strong></big></big>
+   <input style="border-style: solid; border-width: 1px;" type="text" value="" id="inputAddress"onkeydown= "if(event.keyCode==13){btn.click();}"/>
+   <input style="border-style: solid; border-width: 1px;" id="btn" type="button" value="Search" onclick="newsearch();"/>
+   <br>
+              </div>
+   
+    
+    <div id="content">
+    	<div id="about">
+       		<div id="left">
+                          
+            	<br>
+                <div  style="border:1px #8FD7F4   solid; height:550px; width: 1000px;">
+                	<div id="biaoge">
+                	<table id="biaoge" border="1" bordercolor="#000000" width="900" height="420" align="center">
+						<tr height="30">
+                            <td  style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px" > &nbsp;</td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue1">Current</p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue2"> 2 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue3"> 4 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue4"> 6 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue5"> 8 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue6"> 10 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue7"> 12 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue8"> 14 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue9"> 16 </p> </td>
+                            <td style="border-bottom:#cccccc dashed 2px;"> <p name="TimeValue10"> 18 </p> </td>
+                        </tr>
+                        <tr height="40">
+                            <td style="border-right:#cccccc dashed 2px;">Emissions</td>
+                            <td ><img id="all_1" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_2" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_3" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_4" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_5" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_6" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_7" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_8" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_9" src="images/blank.jpg"  ></td>
+                            <td ><img id="all_10" src="images/blank.jpg"  ></td>
+                        </tr>
+                        <tr height="40">
+                            <td style="border-right:#cccccc dashed 2px;">SO2</td>
+                            <td ><img id="SO2_1" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_2" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_3" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_4" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_5" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_6" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_7" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_8" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_9" src="images/blank.jpg"></td>
+                            <td ><img id="SO2_10" src="images/blank.jpg"></td>
+                        </tr>
+                        <tr height="40">
+                            <td style="border-right:#cccccc dashed 2px;">NOx</td>
+                            <td ><img id="NO2_1" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_2" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_3" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_4" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_5" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_6" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_7" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_8" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_9" src="images/blank.jpg"></td>
+                            <td ><img id="NO2_10" src="images/blank.jpg"></td>
+                        </tr>
+						<tr height="40">
+							<td style="border-right:#cccccc dashed 2px;">CO2e</td>
+							<td ><img id="CO2_1" src="images/blank.jpg"></td>
+							<td ><img id="CO2_2" src="images/blank.jpg"></td>
+							<td ><img id="CO2_3" src="images/blank.jpg"></td>
+							<td ><img id="CO2_4" src="images/blank.jpg"></td>
+							<td ><img id="CO2_5" src="images/blank.jpg"></td>
+							<td ><img id="CO2_6" src="images/blank.jpg"></td>
+							<td ><img id="CO2_7" src="images/blank.jpg"></td>
+							<td ><img id="CO2_8" src="images/blank.jpg"></td>
+							<td ><img id="CO2_9" src="images/blank.jpg"></td>
+							<td ><img id="CO2_10" src="images/blank.jpg"></td>
+						</tr>
+						<tr height="40">
+							<td style="border-right:#cccccc dashed 2px;">Mercury</td>
+							<td ><img id="Mercury_1" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_2" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_3" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_4" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_5" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_6" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_7" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_8" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_9" src="images/blank.jpg"></td>
+							<td ><img id="Mercury_10" src="images/blank.jpg"></td>
+						</tr>
+						<tr height="40">
+							<td style="border-right:#cccccc dashed 2px;">Lead</td>
+							<td ><img id="Lead_1" src="images/blank.jpg"></td>
+							<td ><img id="Lead_2" src="images/blank.jpg"></td>
+							<td ><img id="Lead_3" src="images/blank.jpg"></td>
+							<td ><img id="Lead_4" src="images/blank.jpg"></td>
+							<td ><img id="Lead_5" src="images/blank.jpg"></td>
+							<td ><img id="Lead_6" src="images/blank.jpg"></td>
+							<td ><img id="Lead_7" src="images/blank.jpg"></td>
+							<td ><img id="Lead_8" src="images/blank.jpg"></td>
+							<td ><img id="Lead_9" src="images/blank.jpg"></td>
+							<td ><img id="Lead_10" src="images/blank.jpg"></td>
+						</tr>
+					</table>
+				</div>
+
+                	<div style="text-align:right;padding-right:140px;">
+ 						<img src="images/intro.png" width="500"  height="60">
+			        </div>
+			    </div>
+
+
+                </div>
+                
+            	</div>
+            </div>
+         </div>
+   </div>
+   
+   
+   
+  
+           <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+   
+   
+   
+
+
+</body>
+
+
+	<script type="text/javascript">
+
+
+	// 解析url
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+
+	function getLevel(dataInfo){
+        if(null === dataInfo){
+            return "images/blank.jpg";
+        }
+        switch(dataInfo){
+            case 1:
+                return "images/low.jpg";
+            case 2:
+                return "images/mlow.jpg";
+            case 3:
+                return "images/moderate.jpg";
+            case 4:
+                return "images/mhigh.jpg";
+            case 5:
+                return "images/high.jpg";
+            // case 6:
+            //     return "images/moderate.jpg";
+            // case 7:
+            //     return "images/mhigh.jpg";
+            // case 8:
+            //     return "images/mhigh,jpg";
+            // case 9:
+            //     return "images/high.jpg";
+            // case 10:
+            //     return "images/high.jpg";
+            }
+    }
+
+
+    // function getAllLevel(data){
+    //     if (null === data){
+    //         return "images/blank.jpg";
+    //     }
+    //     switch(dataInfo){
+    //         case 1:
+    //             return "images/low.jpg";
+    //         case 2:
+    //             return "images/mlow.jpg";
+    //         case 3:
+    //             return "images/moderate.jpg";
+    //         case 4:
+    //             return "images/mhigh.jpg";
+    //         case 5:
+    //             return "images/high.jpg";
+    //         // case 6:
+    //         //     return "images/moderate.jpg";
+    //         // case 7:
+    //         //     return "images/mhigh.jpg";
+    //         // case 8:
+    //         //     return "images/mhigh,jpg";
+    //         // case 9:
+    //         //     return "images/high.jpg";
+    //         // case 10:
+    //         //     return "images/high.jpg";
+    //         }
+    // }
+
+    function getAggregateLevel(data){
+        if (null === data){
+            return "images/blank.jpg";
+        }
+        switch(data){
+            case 1:
+                return "images/low.jpg";
+            case 2:
+                return "images/mlow.jpg";
+            case 3:
+                return "images/moderate.jpg";
+            case 4:
+                return "images/mhigh.jpg";
+            case 5:
+                return "images/high.jpg";
+        }
+    }
+
+
+
+	var latitude = getQueryString("lan");
+	var longtitude = getQueryString("long");
+	// alert("lat="+latitude+"   long="+longtitude);
+
+
+	var latId = document.getElementById("latude");
+	latId.innerHTML = latitude;
+	var lngId = document.getElementById("lngtidue");
+	lngId.innerHTML = longtitude;
+
+	// document.getElementById('email_lat').value = latitude;
+	// document.getElementById('email_lng').value = longtitude;
+
+
+	function getMsg(lng,lati){
+		 $.getJSON("http://141.217.48.221/App/index.php",{"lng":lng,"lat":lati},function(json){
+
+		 	// 显示现在地址
+			 var LocatID= document.getElementById("Place"); 
+			 LocatID.innerHTML =json.location;
+			 // alert(json.location);		         
+       
+			var ttime1 = getTime();
+            var ttime2 = getOtherTime(1);
+            var ttime3 = getOtherTime(2);
+            var ttime4 = getOtherTime(3);
+            var ttime5 = getOtherTime(4);
+            var ttime6 = getOtherTime(5);
+            var ttime7 = getOtherTime(6);
+            var ttime8 = getOtherTime(7);
+            var ttime9 = getOtherTime(8);
+            var ttime10 = getOtherTime(9);
+
+             // 显示现在时间
+            var T1ID= document.getElementsByName("TimeValue1");
+            for(i=0 ;i<T1ID.length;i++){
+                T1ID[i].innerHTML = ttime1;
+            };
+
+            
+            // 显示2小时候时间
+             var T2ID= document.getElementsByName("TimeValue2");
+            for(i=0 ;i<T2ID.length;i++){
+                T2ID[i].innerHTML =ttime2;
+            };
+            // 显示4小时后时间
+            var T3ID= document.getElementsByName("TimeValue3");
+            for(i=0 ;i<T3ID.length;i++){
+                T3ID[i].innerHTML =ttime3;
+            }; 
+             // 显示6小时后时间
+             var T4ID= document.getElementsByName("TimeValue4");
+            for(i=0 ;i<T4ID.length;i++){
+                T4ID[i].innerHTML =ttime4;
+            };
+            
+            // 显示8小时后时间
+             var T5ID= document.getElementsByName("TimeValue5");
+            for(i=0 ;i<T5ID.length;i++){
+                T5ID[i].innerHTML =ttime5;
+            };
+            // 显示10小时后时间
+             var T5ID= document.getElementsByName("TimeValue6");
+            for(i=0 ;i<T5ID.length;i++){
+                T5ID[i].innerHTML =ttime6;
+            };
+            // 显示12小时后时间
+             var T5ID= document.getElementsByName("TimeValue7");
+            for(i=0 ;i<T5ID.length;i++){
+                T5ID[i].innerHTML =ttime7;
+            };
+            // 显示14小时后时间
+             var T5ID= document.getElementsByName("TimeValue8");
+            for(i=0 ;i<T5ID.length;i++){
+                T5ID[i].innerHTML =ttime8;
+            };
+            // 显示16小时后时间
+             var T5ID= document.getElementsByName("TimeValue9");
+            for(i=0 ;i<T5ID.length;i++){
+                T5ID[i].innerHTML =ttime9;
+            };
+            // 显示18小时后时间
+             var T5ID= document.getElementsByName("TimeValue10");
+            for(i=0 ;i<T5ID.length;i++){
+                T5ID[i].innerHTML =ttime10;
+            };
+
+			
+			
+		
+
+		
+		//CO2
+			var a2 = document.getElementById("CO2_1");
+				a2.src=getLevel(json.current_CO2_emission);
+				var a_1 = json.current_CO2_emission;
+			var a3 = document.getElementById("CO2_2");
+				a3.src=getLevel(json.leem_1_hours_later_time_CO2_emission);
+				var a_2 = json.leem_1_hours_later_time_CO2_emission;
+ 			var a4 = document.getElementById("CO2_3");
+				a4.src=getLevel(json.leem_2_hours_later_time_CO2_emission);
+				var a_3 = json.leem_2_hours_later_time_CO2_emission;
+ 			var a5 = document.getElementById("CO2_4");
+				a5.src=getLevel(json.leem_3_hours_later_time_CO2_emission);
+				var a_4 = json.leem_3_hours_later_time_CO2_emission;
+ 			var a6 = document.getElementById("CO2_5");
+				a6.src=getLevel(json.leem_4_hours_later_time_CO2_emission);
+				var a_5 = json.leem_4_hours_later_time_CO2_emission;
+			var a7 = document.getElementById("CO2_6");
+                a7.src=getLevel(json.leem_5_hours_later_time_CO2_emission);
+                var a_6 = json.leem_5_hours_later_time_CO2_emission;
+            var a8 = document.getElementById("CO2_7");
+                a8.src=getLevel(json.leem_6_hours_later_time_CO2_emission);
+                var a_7 = json.leem_6_hours_later_time_CO2_emission;
+            var a9 = document.getElementById("CO2_8");
+                a9.src=getLevel(json.leem_7_hours_later_time_CO2_emission);
+                var a_8 = json.leem_7_hours_later_time_CO2_emission;
+            var a10 = document.getElementById("CO2_9");
+                a10.src=getLevel(json.leem_8_hours_later_time_CO2_emission);
+                var a_9 = json.leem_8_hours_later_time_CO2_emission;
+            var a11 = document.getElementById("CO2_10");
+                a11.src=getLevel(json.leem_9_hours_later_time_CO2_emission);
+                var a_10 = json.leem_9_hours_later_time_CO2_emission;
+
+ 
+ 
+ 
+ 		//NO2
+ 
+  			var b2 = document.getElementById("NO2_1");
+				b2.src=getLevel(json.current_NO2_emission);
+				var b_1 = json.current_NO2_emission;
+			var b3 = document.getElementById("NO2_2");
+				b3.src=getLevel(json.leem_1_hours_later_time_NO2_emission);
+				var b_2 = json.leem_1_hours_later_time_NO2_emission;
+ 			var b4 = document.getElementById("NO2_3");
+				b4.src=getLevel(json.leem_2_hours_later_time_NO2_emission);
+				var b_3 = json.leem_2_hours_later_time_NO2_emission;
+ 			var b5 = document.getElementById("NO2_4");
+				b5.src=getLevel(json.leem_3_hours_later_time_NO2_emission);
+				var b_4 = json.leem_3_hours_later_time_NO2_emission;
+ 			var b6 = document.getElementById("NO2_5");
+				b6.src=getLevel(json.leem_4_hours_later_time_NO2_emission);
+				var b_5 = json.leem_4_hours_later_time_NO2_emission;
+			var b7 = document.getElementById("NO2_6");
+                b7.src=getLevel(json.leem_5_hours_later_time_NO2_emission);
+                var b_6 = json.leem_5_hours_later_time_NO2_emission;
+            var b8 = document.getElementById("NO2_7");
+                b8.src=getLevel(json.leem_6_hours_later_time_NO2_emission);
+                var b_7 = json.leem_6_hours_later_time_NO2_emission;
+            var b9 = document.getElementById("NO2_8");
+                b9.src=getLevel(json.leem_7_hours_later_time_NO2_emission);
+                var b_8 = json.leem_7_hours_later_time_NO2_emission;
+            var b10 = document.getElementById("NO2_9");
+                b10.src=getLevel(json.leem_8_hours_later_time_NO2_emission);
+                var b_9 = json.leem_8_hours_later_time_NO2_emission;
+            var b11 = document.getElementById("NO2_10");
+                b11.src=getLevel(json.leem_9_hours_later_time_NO2_emission);
+                var b_10 = json.leem_9_hours_later_time_NO2_emission;
+
+
+
+		 
+		//SO2
+ 
+  			var c2 = document.getElementById("SO2_1");
+				c2.src=getLevel(json.current_SO2_emission);
+				var c_1 = json.current_SO2_emission;
+			var c3 = document.getElementById("SO2_2");
+				c3.src=getLevel(json.leem_1_hours_later_time_SO2_emission);
+				var c_2 = json.leem_1_hours_later_time_SO2_emission;
+ 			var c4 = document.getElementById("SO2_3");
+				c4.src=getLevel(json.leem_2_hours_later_time_SO2_emission);
+				var c_3 = json.leem_2_hours_later_time_SO2_emission;
+ 			var c5 = document.getElementById("SO2_4");
+				c5.src=getLevel(json.leem_3_hours_later_time_SO2_emission);
+				var c_4 = json.leem_3_hours_later_time_SO2_emission;
+ 			var c6 = document.getElementById("SO2_5");
+				c6.src=getLevel(json.leem_4_hours_later_time_SO2_emission);
+				var c_5 = json.leem_4_hours_later_time_SO2_emission;
+			var c7 = document.getElementById("SO2_6");
+                c7.src=getLevel(json.leem_5_hours_later_time_SO2_emission);
+                var c_6 = json.leem_5_hours_later_time_SO2_emission;
+            var c8 = document.getElementById("SO2_7");
+                c8.src=getLevel(json.leem_6_hours_later_time_SO2_emission);
+                var c_7 = json.leem_6_hours_later_time_SO2_emission;
+            var c9 = document.getElementById("SO2_8");
+                c9.src=getLevel(json.leem_7_hours_later_time_SO2_emission);
+                var c_8 = json.leem_7_hours_later_time_SO2_emission;
+            var c10 = document.getElementById("SO2_9");
+                c10.src=getLevel(json.leem_8_hours_later_time_SO2_emission);
+                var c_9 = json.leem_8_hours_later_time_SO2_emission;
+            var c11 = document.getElementById("SO2_10");
+                c11.src=getLevel(json.leem_9_hours_later_time_SO2_emission);
+                var c_10 = json.leem_9_hours_later_time_SO2_emission;
+		 
+		 
+		 //Mercury
+ 
+  			var d2 = document.getElementById("Mercury_1");
+				d2.src=getLevel(json.current_Mercury_emission);
+				var d_1 = json.current_Mercury_emission;
+			var d3 = document.getElementById("Mercury_2");
+				d3.src=getLevel(json.leem_1_hours_later_time_Mercury_emission);
+				var d_2 = json.leem_1_hours_later_time_Mercury_emission;
+ 			var d4 = document.getElementById("Mercury_3");
+				d4.src=getLevel(json.leem_2_hours_later_time_Mercury_emission);
+				var d_3 = json.leem_2_hours_later_time_Mercury_emission;
+ 			var d5 = document.getElementById("Mercury_4");
+				d5.src=getLevel(json.leem_3_hours_later_time_Mercury_emission);
+				var d_4 = json.leem_3_hours_later_time_Mercury_emission;
+ 			var d6 = document.getElementById("Mercury_5");
+				d6.src=getLevel(json.leem_4_hours_later_time_Mercury_emission);
+				var d_5 = json.leem_4_hours_later_time_Mercury_emission;
+			var d7 = document.getElementById("Mercury_6");
+                d7.src=getLevel(json.leem_5_hours_later_time_Mercury_emission);
+                var d_6 = json.leem_5_hours_later_time_Mercury_emission;
+            var d8 = document.getElementById("Mercury_7");
+                d8.src=getLevel(json.leem_6_hours_later_time_Mercury_emission);
+                var d_7 = json.leem_6_hours_later_time_Mercury_emission;
+            var d9 = document.getElementById("Mercury_8");
+                d9.src=getLevel(json.leem_7_hours_later_time_Mercury_emission);
+                var d_8 = json.leem_7_hours_later_time_Mercury_emission;
+            var d10 = document.getElementById("Mercury_9");
+                d10.src=getLevel(json.leem_8_hours_later_time_Mercury_emission);
+                var d_9 = json.leem_8_hours_later_time_Mercury_emission;
+            var d11 = document.getElementById("Mercury_10");
+                d11.src=getLevel(json.leem_9_hours_later_time_Mercury_emission);
+                var d_10 = json.leem_9_hours_later_time_Mercury_emission;
+
+		 
+		 
+		 
+		  //Lead
+ 
+  			var e2 = document.getElementById("Lead_1");
+				e2.src=getLevel(json.current_Lead_emission);
+				var e_1 = json.current_Lead_emission;
+			var e3 = document.getElementById("Lead_2");
+				e3.src=getLevel(json.leem_1_hours_later_time_Lead_emission);
+				var e_2 = json.leem_1_hours_later_time_Lead_emission;
+ 			var e4 = document.getElementById("Lead_3");
+				e4.src=getLevel(json.leem_2_hours_later_time_Lead_emission);
+				var e_3 = json.leem_2_hours_later_time_Lead_emission;
+ 			var e5 = document.getElementById("Lead_4");
+				e5.src=getLevel(json.leem_3_hours_later_time_Lead_emission);
+				var e_4 = json.leem_3_hours_later_time_Lead_emission;
+ 			var e6 = document.getElementById("Lead_5");
+				e6.src=getLevel(json.leem_4_hours_later_time_Lead_emission);
+				var e_5 = json.leem_4_hours_later_time_Lead_emission;
+			var e7 = document.getElementById("Lead_6");
+                e7.src=getLevel(json.leem_5_hours_later_time_Lead_emission);
+                var e_6 = json.leem_5_hours_later_time_Lead_emission;
+            var e8 = document.getElementById("Lead_7");
+                e8.src=getLevel(json.leem_6_hours_later_time_Lead_emission);
+                var e_7 = json.leem_6_hours_later_time_Lead_emission;
+            var e9 = document.getElementById("Lead_8");
+                e9.src=getLevel(json.leem_7_hours_later_time_Lead_emission);
+                var e_8 = json.leem_7_hours_later_time_Lead_emission;
+            var e10 = document.getElementById("Lead_9");
+                e10.src=getLevel(json.leem_8_hours_later_time_Lead_emission);
+                var e_9 = json.leem_8_hours_later_time_Lead_emission;
+            var e11 = document.getElementById("Lead_10");
+                e11.src=getLevel(json.leem_9_hours_later_time_Lead_emission);
+                var e_10 = json.leem_9_hours_later_time_Lead_emission;
+
+
+
+		//All 
+			// var f1 = document.getElementById("all_1");
+			// var f_1 = a_1 + b_1 + c_1 + d_1 +e_1;
+			// 	f1.src=getAllLevel(f_1);		 
+			// var f2 = document.getElementById("all_2");	
+			// var f_2 = a_2 + b_2 + c_2 + d_2 +e_2;
+			// 	f2.src=getAllLevel(f_2);	
+			// var f3 = document.getElementById("all_3");	
+			// var f_3 = a_3 + b_3 + c_3 + d_3 +e_3;
+			// 	f3.src=getAllLevel(f_3);	
+			// var f4 = document.getElementById("all_4");	
+			// var f_4 = a_4 + b_4 + c_4 + d_4 +e_4;
+			// 	f4.src=getAllLevel(f_4);	
+			// var f5 = document.getElementById("all_5");
+			// var f_5 = a_5 + b_5 + c_5 + d_5 +e_5;
+			// 	f5.src=getAllLevel(f_5);	
+			// var f6 = document.getElementById("all_6");
+   //          var f_6 = a_6 + b_6 + c_6 + d_6 +e_6;
+   //              f6.src=getAllLevel(f_6);   
+   //          var f7 = document.getElementById("all_7");
+   //          var f_7 = a_7 + b_7 + c_7 + d_7 +e_7;
+   //              f7.src=getAllLevel(f_7);   
+   //          var f8 = document.getElementById("all_8");
+   //          var f_8 = a_8 + b_8 + c_8 + d_8 +e_8;
+   //              f8.src=getAllLevel(f_8);   
+   //          var f9 = document.getElementById("all_9");
+   //          var f_9 = a_9 + b_9 + c_9 + d_9 +e_9;
+   //              f9.src=getAllLevel(f_9);   
+   //          var f10 = document.getElementById("all_10");
+   //          var f_10 = a_10 + b_10 + c_10 + d_10 +e_10;
+   //              f10.src=getAllLevel(f_10); 			
+
+
+   // all aggregated
+        var f1 = document.getElementById("all_1");
+            f1.src = getAggregateLevel(json.current_Aggregated_Level);
+        var f2 = document.getElementById("all_2");
+            f2.src = getAggregateLevel(json.leem_1_hours_later_Aggregated_Level);
+        var f3 = document.getElementById("all_3");
+            f3.src = getAggregateLevel(json.leem_2_hours_later_Aggregated_Level);
+        var f4 = document.getElementById("all_4");
+            f4.src = getAggregateLevel(json.leem_3_hours_later_Aggregated_Level);
+        var f5 = document.getElementById("all_5");
+            f5.src = getAggregateLevel(json.leem_4_hours_later_Aggregated_Level);
+        var f6 = document.getElementById("all_6");
+            f6.src = getAggregateLevel(json.leem_5_hours_later_Aggregated_Level);
+        var f7 = document.getElementById("all_7");
+            f7.src = getAggregateLevel(json.leem_6_hours_later_Aggregated_Level);
+        var f8 = document.getElementById("all_8");
+            f8.src = getAggregateLevel(json.leem_7_hours_later_Aggregated_Level);
+        var f9 = document.getElementById("all_9");
+            f9.src = getAggregateLevel(json.leem_8_hours_later_Aggregated_Level);
+        var f10 = document.getElementById("all_10");
+            f10.src = getAggregateLevel(json.leem_9_hours_later_Aggregated_Level);  
+
+				// alert(a_1 + " "+b_1+ " "+c_1+" " + d_1+" "+e_1);
+				// alert(a_2 + " "+b_2+ " "+c_2+" " + d_2+" "+e_2);
+
+
+			var lmpId= document.getElementById("lmpValue");
+			lmpId.innerHTML = json.current_lmp;
+            
+            //èŽ·å–CPN
+            var CPNId= document.getElementById("CPNvalue");
+			CPNId.innerHTML = json.cpn;
+			// setMapRed(parseFloat(lati),parseFloat(lng));
+	 });		 
+}
+	getMsg(longtitude,latitude);
+
+	function newsearch(){
+		var inputLat;
+    	var inputLng;
+		var inputAddress = document.getElementById("inputAddress").value;
+		$.get('https://maps.google.com/maps/api/geocode/xml',{"sensor":"false","address":inputAddress},function(xml){
+			
+			var locations = $(xml).find('location').each(function(){
+			var $loc = $(this);
+			var gLat = $loc.find("lat").text();
+			var gLng = $loc.find("lng").text();
+
+			inputLat = gLat;
+			inputLng = gLng;
+        
+			});
+		getMsg(inputLng,inputLat);
+		});
+	}
+
+
+
+
+	</script>
+
+
+
+
+
+
+</html>

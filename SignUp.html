@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Sign Up</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.featureList-1.0.0.js"></script>
+
+<script src="Cheng.js"></script> 
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;">
+                <div style="display:inline;float:left;  " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, Sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="buttonBackground">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+               <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main" style="padding-top:190px;height:500px;">
+        <div><h3>   Sign Up</h3></div>
+        <hr style="border:solid 1px black;">
+
+
+        <div style="float:left;height:350px;width:450px;margin-top:20px;margin-left:30px;padding:30px;">
+            <div>
+                Email Address: </br>
+                <input type="text" class="signupinput" id="signupEmail"/></br></br>
+            </div>
+
+            <div>
+                <div style="float:left;">
+                    Name: </br>
+                    <input type="text" class="signupinput" id="signupName"/>
+                </div>
+                <div style="float:left;margin-left:30px;">
+                    Zip Code: </br>
+                    <input type="text" class="signupinput" id="signupZipcode"/>
+                </div>
+            </div></br></br>
+
+            <div style="margin-top:30px;">
+                <div style="float:left;">
+                    City: </br>
+                    <input type="text" class="signupinput" id="signupCity"/>
+                </div>
+                <div style="float:left;margin-left:30px;">
+                    State: </br>
+                    <input type="text" class="signupinput" id="signupState"/>
+                </div>
+            </div>
+
+            <input type="image"  onclick="Subscribe();" src="images/signup.png" width="210" height="40" name="Submit"  style="margin-top:40px;">
+            
+            <br><br>
+            <ul style="-webkit-padding-start:10px;">
+                <li style="color:#000; font-size:12px;"><span style="color:#000; font-size:16px;">           Do you live in Arkansas, Illinois, Indiana, Iowa, Kentucky, Lousiana, Michigan, Mississippi, Missouri, Montana,  Minnesota, North Dakota, South Dakota, Texas, or Wisconsin?  Try HERO today.</span></li>
+                <li style="color:#000; font-size:12px;"><span style="color:#000; font-size:16px;">If you don’t, check back in a while. We are adding more states all the time!</span></li>
+
+            </ul>
+
+        </div>
+
+        <div style="float:left;border:1px solid black;margin-top:70px;margin-left:30px;padding:10px;">
+            <p style="color:#0033CC;font-weight:bold;margin-left:25px;padding-bottom:10px;"><big><big>Get Your Daily HERO Forecast</big></big></p><br>
+            <ul>
+                <li style="padding:5px;"><big>Track better times to use electricity </big></li>
+                <li style="padding:5px;"><big>Take action </big></li>
+                <li style="padding:5px;"><big> Reduce your emissions footprint </big></li>
+                <li style="padding:5px;"><big> Make a difference </big></li>
+            </ul>
+
+            <input type="image" src="images/tellfriend.png" width="390" height="40" name="Submit"  style="margin-top:40px;">
+        </div>
+
+       
+</div>
+
+
+
+
+
+
+    <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+</body>
+
+<script type="text/javascript">
+
+    function Subscribe(){
+        var email,name,zipcode,city,state,lat,lng;
+        email = document.getElementById("signupEmail").value;
+        name = document.getElementById("signupName").value;
+        zipcode = document.getElementById("signupZipcode").value;
+        city = document.getElementById("signupCity").value;
+        state = document.getElementById("signupState").value;
+
+        // alert(email);
+
+        if(email!=""&&name!=""&&zipcode!=""&&city!=""&&state!=""){
+
+        // alert(email+name+zipcode+city+state);
+        // alert(zipcode);
+
+        $.get('https://maps.google.com/maps/api/geocode/xml',{"sensor":"false","language":"en","address":zipcode},function(xml,status){
+            
+            // alert(xml);
+            // alert(status);
+            //  =====get latitude and longtitude====
+            var locations = $(xml).find('location').each(function(){
+            var $loc = $(this);
+            var gLat = $loc.find("lat").text();
+            var gLng = $loc.find("lng").text();
+            
+            lat = gLat;
+            lng = gLng;
+            
+            // alert(lat);
+            });
+        
+
+        // alert(email+name+zipcode+city+state);
+
+            $.post("http://141.217.48.221/App/index.php/User/register",{email:email,category:"HERO",subscribe:"yes",name:name,lat:lat,lng:lng,zipcode:zipcode,passwd:"null",phone:"null"},function(result,status,xhr){
+
+                var e = result.email;
+                var s = result.status;
+
+                if(s==1){
+                    alert("You have been successfully subscribed. You will receive your daily email forecast at 6am every day.");
+                    document.getElementById("signupEmail").value="";
+                    document.getElementById("signupName").value="";
+                    document.getElementById("signupZipcode").value="";
+                    document.getElementById("signupState").value="";
+                    document.getElementById("signupCity").value="";
+                }
+                else if(s==0){
+                    var f = result.fail_reason;
+                    if(f==0){alert("Failed to Subscribe.")}
+                        else if(f==1){alert("Already Registered.")}
+                }
+
+            },'json');
+
+
+        });
+    
+        }
+
+        else {
+            alert("Please fill in all the fields.");
+            return;
+        }
+
+    }
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>About Us</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+    <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.featureList-1.0.0.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+    <script src="jquery/jquery.slides.min.js"></script>
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+  <!-- <link rel="stylesheet" href="css/example.css"> -->
+  <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+  <link href="css/lanrenzhijia.css" type="text/css" rel="stylesheet">
+  <script src="Cheng.js"></script> 
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+ <script language="javascript">
+//         $(document).ready(function() {
+
+//             $.featureList(
+//                 $("#tabs li a"),
+//                 $("#output li"), {
+//                     start_item  :   0
+//                 }
+//             );
+//         });
+// </script>
+
+<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+
+<script src="jquery/jquery.flexslider.js"></script> 
+  <script type="text/javascript">  
+      $(window).load(function() {
+        $('.flexslider').flexslider();
+      });
+  </script> 
+
+  <style type="text/css">
+    li {
+        list-style:none;
+        text-align: -webkit-match-parent;
+        }
+    ol{
+        padding-left:0px;
+    }
+    #detail {
+
+    }
+    #detail :hover{
+
+    }
+</style> 
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;overflow:hidden;">
+                <div style="display:inline;float:left; " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left;"> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, Sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="aboutbuttonBackground">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main" style="margin-top:96px;">
+        <div><h3>   About Us</h3></div>
+        <hr style="border:solid 1px black;">
+
+
+                <div class="flexslider" style="margin-top:10px;">
+                  <ul class="slides">
+                    <li>
+                      <img src="images/a1.png" />
+                    </li>
+                    <li>
+                      <img src="images/a2.png" />
+                    </li>
+                    <li>
+                      <img src="images/a3.png" />
+                    </li>
+                    <li>
+                      <img src="images/a4.png" />
+                    </li>
+                  </ul>
+                </div>
+
+          <!-- <div class="container" style="width:1061px;height:300px; margin-top:10px;">
+            <div id="slides" style="border:1px solid #8FD7F4;">
+              <img src="images/a1.png" alt="" style="width:1061px;height:300px;">
+              <img src="images/a2.png" alt="" style="width:1061px;height:300px;">
+              <img src="images/a3.png" alt="" style="width:1061px;height:300px;">
+              <img src="images/a4.png" alt="" style="width:1061px;height:300px;">
+            </div>
+          </div> -->
+
+
+
+    <div style="margin-top:50px; background:#8FD7F4;padding:3px;">
+        <ul id="abouttabs">
+            <li><a href="#" title="tab1">About LEEM</a></li>
+            <li><a href="#" title="tab2">The Team</a></li>
+            <li><a href="#" title="tab3">Sponsors</a></li>
+            <li><a href="#" title="tab4">Partners</a></li>
+            <li><a href="#" title="tab5">Project</a></li>
+        </ul>
+        <div id="content">
+          <div id="tab1">
+            <h3> About LEEM</h3><hr style="border:solid 1px black;">
+            <p style="padding:30px;text-align:justify;">
+              <img src="images/u57.png" style="float:left;padding:20px;" width="300" height="230"><br><big>HERO uses the LEEM algorithm developed by researchers at Wayne State University to provide location specific, real-time and forecasted electricity emissions data. LEEM (Locational Electricity Emissions Monitoring) is a data service that employs a sophisticated system of databases, algorithms, and power flow models that tracks, organizes, normalizes, analyzes, and reports out a myriad of real-time and forecasted electricity cost and emissions information that can be used by companies, utilities, “big energy data” firms, energy management firms, governments, individuals and others to make better energy and emission management decisions.</big>
+            </p><br><br><br><br><br><br>
+
+          </div>
+          <div id="tab2">
+            <h3> The Team</h3><hr style="border:solid 1px black;">
+<!-- 
+            <p style="padding-top:20px;padding-left:20px;">The HERO team is directed by Dr. <a href="#Carol">Carol Miller</a>, who has worked for more than 30 years on creating innovative engineering solutions for tough environmental challenges.  Other key team leaders include Dr. <a href="#Caisheng">Caisheng Wang</a> (Electrical Engineering) and Dr. <a href="#Shawn">Shawn McElmurry</a> (Environmental Engineering) and Dr. <a href="#Allison">Allison Harris</a>.</p> -->
+
+            <!-- Carol Miller -->
+            <p style="padding:20px;" id="Carol"><img src="images/u5.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big><a href="http://engineering.wayne.edu/profile/carol.miller/">Carol Jean Miller</a></big></big><br><br>
+             <big>Professor, Wayne State University Department of Civil and Environmental Engineering </big>
+             <br><br>
+             Professor Carol Miller of the Department of Civil and Environmental Engineering is the Principal Investigator for the project that has created this environmentally responsive electricity tool.  Dr. Miller has research interests spanning urban water sustainability, environmental pollutant transport, and the energy/environment interface.  Dr. Miller is the previous Chair of the State of Michigan Board of Licensing for Professional Engineers and the current U.S. Chair of the bi-national Great Lakes Science Advisory Board of the International Joint Commission.  Her research has been funded by numerous agencies including the Great Lakes Protection Fund (sponsoring the present project), US Army Corps of Engineers, National Science Foundation, US EPA, DTE Energy, the Great Lakes Commission, and others.
+            </p>
+
+            <p style="padding:20px;" id="Caisheng"><img src="images/u18.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big><a href="http://www.eng.wayne.edu/~caisheng/">Caisheng Wang</a></big></big><br><br>
+             <big>Associate Professor, Electrical and Computer Engineering, Electric-drive Vehicle Engineering</big>
+             <br><br>
+             The WSU co-PI is Dr. Caisheng Wang (Electrical and Computer Engineering).  Caisheng is the PI of two ongoing NSF projects “Optimal Distributed Control of Power Grids with Multiple Alternative Energy Distributed Generation Microgrids: Towards Reliable, Sustainable and Clean Power Generation” and “Advanced Real-Time Battery Characterization and Management: Safe, Reliable, and Optimal Operation of Battery Systems for Electric-Drive Vehicles and Grid Support”. He has been collaborating with researchers nationally (e.g. from PNNL) and worldwide (e.g., from TU Berlin in Germany, National Institute of AIST in Japan and Zhejiang EPRI in China) on various interdisciplinary topics related to sustainable energy development.
+            </p>
+
+            <p style="padding:20px;" id="Shawn"><img src="images/u32.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big><a href="http://engineering.wayne.edu/profile/shawn.mcelmurry/">Shawn McElmurry</a></big></big><br><br>
+             <big>Assistant Professor, Civil and Environmental Engineering</big>
+              <br><br>
+             Dr. Shawn McElmurry, Associate Professor of Civil and Environmental Engineering, is one of the original developers of the LEEM technology.  Shawn has a broad range of skills related to contaminant transport, air quality, and computational modeling that support product development.  Dr. McElmurry's research has been supported by a wide range of agencies including the US EPA, the International Joint Commission, and others.  He is  well-known expert in heavy metal deposition and transport.<br><br><br>
+            </p>
+
+            <p style="padding:20px;" id="Allison"><img src="images/Allison.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Allison Harris</big></big><br><br>
+             <big>Post-Doctoral Fellow, Civil and Environmental Engineering</big>
+             <br><br> 
+             Dr. Allison Harris is a Post-Doctoral Fellow in the Department of Civil and Environmental Engineering.  Following completion of her PhD in Civil and Environmental Engineering from Carnegie Mellon University, Allison worked as a consultant on remediation projects for private and municipal clients.  Allison is leading the emissions portion of this project, as well as helping to design the behavioral components of energy messaging. 
+            </p><br><br><br>
+
+            <p style="padding:20px;" id="Steve"><img src="images/Steve.png" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Stephen S. Miller</big></big><br><br>
+             <big>P.E.,  Section Manager, TRANSMISSION 2000®</big>
+             <br><br> 
+             Commonwealth provides expertise and data to drive LEEM. Commonwealth was involved in conceiving the methodology and continues to consult with the project team as the method is refined. Commonwealth's proprietary algorithms uniquely allow disparate data sources to be related to produce granular and actionable results. 
+            </p><br><br><br><br>
+
+            <p style="padding:20px;" id="Loch"><img src="images/Loch.png" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Loch McCabe</big></big><br><br>
+             <big>President of <a href="http://www.shepherdadvisors.com">Shepherd Advisors </a></big>
+             <br><br> 
+             Works with companies and organizations to research, strategize and implement go-to-market and go-to-customer strategies and action plans.  Shepherd Advisors' clients know that a deep understanding of customer needs is vital to maximizing market share, launching new products, and entering new markets. Loch has successfully led market- and customer-driven growth strategy engagements for over 20 years. Loch focuses on growth strategy, market development and partnership building. He has a knack for understanding stories, recognizing opportunities, developing pathways, and working with others to overcome obstacles and secure needed resources. He backs up his instincts and enthusiasm with methodologies, analysis and due diligence that fosters clearer thinking and action. 
+            </p>
+
+            <p style="padding:20px;" id="Kunle"><img src="images/Kunle.png" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Adekunle Adegboyega</big></big><br><br>
+             <big>MBA Student </a></big>
+             <br><br> 
+             Kunle works closely with Loch McCabe to drive the go-to-market and go-to-customer strategies for HERO and LEEM projects. Skilled with a solid background in Entrepreneurial management and a growing flair for project management, Kunle has been a great asset to the team, he helps to research and identify potential market opportunities and he is responsible for conceptualizing the HERO and LEEM public/customers facing websites.
+            </p><br><br><br>
+
+            <p style="padding:20px;" id="Yang"><img src="images/Yang.png" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Yang Wang</big></big><br><br>
+             <big>Post-Doctoral Fellow, Civil and Environmental Engineering </big>
+             <br><br> 
+             Yang Wang received his Ph.D. degree from Chongqing University in Electrical Engineering, China, 2009. Currently he is a postdoctoral fellow in the Department of Electrical & Computer Engineering at Wayne State University, Detroit, US. He is a Senior Member of IEEE. His research interests include power system reliability, demand side management and voltage stability analysis.
+            </p>
+            <br><br><br>
+
+            <p style="padding:20px;" id="Michael"><img src="images/Michael.png" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Michael Murray</big></big><br><br>
+             <big>Ph.D.  Staff Scientist, National Wildlife Federation, Great Lakes Regional Center</big>
+             <br><br> 
+             Michael is an environmental chemist and has been Staff Scientist with the National Wildlife Federation’s Great Lakes office since 1997. His work for a number of years focused on the scientific and policy aspects of mercury and other toxic chemicals in the Great Lakes region and more broadly, including mercury inventory assessment, pollution prevention, and control options. His work has more recently broadened to a number of other areas, including aquatic invasive species, nutrients and eutrophication, Great Lakes indicators, and climate change mitigation and adaptation.
+            </p>
+            <br><br>
+
+            <p style="padding:20px;" id="Mohsen"><img src="images/Mohsen.png" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Mohsen Sadatian</big></big><br><br>
+             <big>Ph.D. Candidate, Civil & Environmental Engineering </big>
+             <br><br> 
+             Cooperating on improvement of data gathering and processing procedures of LEEM. Collaborating on development of LEEM 2.0
+            </p>
+            <br><br><br><br><br>
+
+            <p style="padding:20px;" id="Guoyao"><img src="images/Guoyao.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Guoyao Xu</big></big><br><br>
+             <big> Ph.D student, Computer Engineering </big>
+             <br><br> 
+             I'm a Ph.D student of Computer Engineering and I'm responsible for the system architecture and technique part of LEEM and HERO project. My research interest is the resource management of big data architecture system,green computing,cluster computing and cloud computing.
+            </p>
+            <br><br><br><br>
+
+            <p style="padding:20px;" id="Cheng"><img src="images/Cheng.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Cheng Chang</big></big><br><br>
+             <big> Master student, Computer Science </big>
+             <br><br> 
+             HERO website developer. A master student of Computer Science Department. Working for LEEM and HERO team， good at website and smartphone Apps design.
+            </p>
+            <br><br><br><br><br>
+
+            <p style="padding:20px;" id="Wenjing"><img src="images/Wenjing.jpg" width="150" height="225" style="float:top;float:left;padding:20px;" >
+             <br><big><big>Wenjing Zhang</big></big><br><br>
+             <big> Master student, Computer Science </big>
+             <br><br> 
+             Wenjing is a master student in the Development of Computer Science from Wayne State University. Working on the design of HERO website, all the UI of HERO website come from her design.
+            </p>
+            <br><br><br><br><br>
+
+            <p style="padding:20px;">For more than five years, Dr. Miller has led teams of faculty and students developing innovative approaches to integrating electricity generation cost and air emission impact factors into engineering applications.  For more about this work, please go to <a href="http://engineering.wayne.edu/wsuwater/"> http://engineering.wayne.edu/wsuwater/ </a>.</p>
+
+          </div>
+          <div id="tab3">
+            <h3> Sponsors</h3><hr style="border:solid 1px black;">
+            <p style="padding:30px;">
+    
+              <a href="http://wayne.edu"><img src="images/uwayne.jpg" width="313" height="86" style="margin:20px;"/></a>
+              <a href="http://glpf.org/"><img src="images/ulake.jpg" width="340" height="86" style="margin:20px;margin-left:100px;"/></a><br><br>
+              <big>The primary funders of HERO and LEEM are the Great Lakes Protection Fund(http://glpf.org/) and Wayne State University(http://wayne.edu).<br><br>
+
+              The Great Lakes Protection Fund is an endowment whose mission is to identify, demonstrate and promote regional action to enhance the health of the Great Lakes Ecosystem.<br><br>
+
+              Wayne State University has long been a leader in energy and environmental research, especially with an urban focus.</big>
+              
+            </p>
+          </div>
+          <div id="tab4">
+            <h3> Partners</h3><hr style="border:solid 1px black;">
+            <p style="padding:30px;">
+              <big>The primary funder of the HERO and LEEM is the Great Lakes Protection Fund.  Other partners include:</big><br>
+              <a href="http://wayne.edu"><img src="images/u81.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://glpf.org/"><img src="images/u68.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="https://www2.dteenergy.com"><img src="images/u85.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="https://www.misoenergy.org/"><img src="images/u89.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://www.pnl.gov/"><img src="images/u93.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://www.cai-engr.com/"><img src="images/u97.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://energyefficiencymarkets.com/"><img src="images/u101.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://www.cmu.edu/"><img src="images/u109.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://www.shepherdadvisors.com/"><img src="images/u113.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://www.consumersenergy.com/"><img src="images/u117.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href="http://www.nwf.org/"><img src="images/u121.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href=""><img src="images/u125.png" width="175" height="80" style="margin:20px;"/></a>
+              <a href=""><img src="images/u129.png" width="175" height="80" style="margin:20px;"/></a>
+            </p>
+          </div>
+          <div id="tab5">
+            <h3> Project</h3><hr style="border:solid 1px black;">
+              <img src="images/u137.png" width="488" height="235" style="float:left;padding:30px;">
+              <big><p style="padding:30px;">HERO is part of a large initiative by Dr. MIller and her Wayne State  University team to enable "Environmentally Sensitive Electricity" (ESE).  <br><br>
+ 
+              Today, electricity generation management focuses almost entirely on reliability and cost.   But now it is possible to also have Environmentally Sensitive Electricity, which  enables electricity customers, communities, and utilities to manage electricity generation to minimize air emissions too.<br><br>
+
+              Environmentally Sensitive Electricity provides game changing potential.  Imagine a smarter  grid that responds to the needs of the earth as well as the budget.   With HERO, we help individuals reduce emissions as they shift the time of their electricity use.  Through the larger LEEM project, we will help entire communities and companies to seamlessly shift their electricity use over time and location to minimize electricity generation emissions.<br><br>
+ 
+              We have a great team helping us in these endeavors (see our Funders and Partners).  Please join us (<a href="signup.html">SignUp</a>) .  Subscribe today to a daily HERO forecast if you're in an eligible location.<br><big>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;font-size:16px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;font-size:16px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+  //   <script>
+  //   $(function() {
+  //     $('#slides').slidesjs({
+  //       width: 1061,
+  //       height: 300,
+  //       play: {
+  //         active: true,
+  //         auto: true,
+  //         interval: 6000,
+  //         swap: true
+  //       }
+  //     });
+  //   });
+  // </script>
+
+  <script>
+$(document).ready(function() {
+    $("#content div").hide(); // Initially hide all content
+    $("#abouttabs li:first").attr("id","current"); // Activate first tab
+    $("#content div:first").fadeIn(); // Show first tab content
+    
+    $('#abouttabs a').click(function(e) {
+        e.preventDefault();        
+        $("#content div").hide(); //Hide all content
+        $("#abouttabs li").attr("id",""); //Reset id's
+        $(this).parent().attr("id","current"); // Activate this
+        $('#' + $(this).attr('title')).fadeIn(); // Show content for current tab
+    });
+});
+</script>
+
+
+</body>
+
+
+
+
+
+</html>

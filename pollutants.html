@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Info On Pollutants</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.featureList-1.0.0.js"></script>
+
+<script src="Cheng.js"></script> 
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+
+<script>
+<!--
+function setTab(name,cursel,n){
+ for(i=1;i<=n;i++){
+  var menu=document.getElementById(name+i);
+  var con=document.getElementById("con_"+name+"_"+i);
+  menu.className=i==cursel?"hover":"";
+  con.style.display=i==cursel?"block":"none";
+ }
+}
+//-->
+</script>
+
+
+
+<style type="text/css">
+<!--
+
+#lib_Tab1_sx{width:1050px;margin:0px;padding-top:20px;margin-bottom:15px; overflow:hidden;}
+
+.lib_tabborder_sx{}
+.lib_Menubox_sx {line-height:28px;position:relative; float:left; width:195px;height:500px; }
+
+.lib_Menubox_sx ul{margin:0px;padding:0px;list-style:none; position:absolute; top:15px; left:5px; margin-left:10px; height:25px;text-align:center;}
+.lib_Menubox_sx li{display:block;cursor:pointer;width:180px;color:#002D56;font-weight:bold; margin-bottom:8px;height:30px;line-height:25px; background-color:#CDEBF7;font-size: 18px;}
+.lib_Menubox_sx li.hover{padding:0px;background:#fff;width:180px;border:1px solid #95C9E1; border-right:0;
+color:black;height:25px;line-height:25px;}
+.lib_Contentbox_sx{margin-top:0px;padding:20px; border-left:0; margin-left:195px;border:1px solid #95C9E1;}
+-->
+</style>
+
+
+</head>
+
+
+
+
+<body>
+
+    <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;">
+                <div style="display:inline;float:left; " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, Sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="buttonBackground">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main" style="padding-top:190px;">
+        <div><h3>   Information On Pollutants</h3></div>
+        <hr style="border:solid 1px black;">
+
+
+        <div id="lib_Tab1_sx" class="lib_tabborder_sx">
+            <div class="lib_Menubox_sx ">
+            <ul>
+               <li id="one1" onclick="setTab('one',1,5)" class="hover">GHGs</li>
+               <li id="one2" onclick="setTab('one',2,5)" >NOx</li>
+               <li id="one3" onclick="setTab('one',3,5)">SO2</li>   
+               <li id="one4" onclick="setTab('one',4,5)">Mercury</li>
+               <li id="one5" onclick="setTab('one',5,5)">Lead</li>
+            </ul>
+            </div>
+             <div class="lib_Contentbox_sx ">
+
+<!-- CO2====   -->
+               <div id="con_one_1" >
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;HERO—About Greenhouse Gas Emissions</big></p><hr style="border:solid 1px #BEBEBE;">
+
+                    <img src="images/CO21.png" style="float:left;padding:30px;" width="280" height="250">
+                    <br><p style="padding:30px;"><big>Greenhouse gases (GHGs) are gases that trap heat in the atmosphere by absorbing and emitting thermal radiation from the sun.<br><br>
+                    These include carbon dioxide (CO2), methane (CH4), nitrous oxide (N2O), and fluorinated gases. Some greenhouse gases, such as CO2, are emitted to the atmosphere through both natural processes and human activities. Other greenhouse gases (e.g., fluorinated gases) are created and emitted solely through human activities.</big></p><br><br>
+
+                    <p style="font-size:25px;color:#002D56;padding-left:30px;font-family:  'Roboto Slab', serif;font-weight:bold;">CO2</p><br>
+                    <img src="images/CO22.png" style="float:left;padding-left:30px;" width="340" height="243">
+                    <img src="images/CO23.png" style="padding-left:30px;" width="340" height="243"><br>
+                    <p style="padding-left:30px;padding-right:30px;padding-top:30px;">Carbon dioxide enters the atmosphere through the burning of fossil fuels (oil, natural gas, and coal), solid waste, trees and wood products, etc. Carbon dioxide is also removed from the atmosphere (or “sequestered”) when it is absorbed by plants as part of the biological carbon cycle.</p>
+
+                    <img src="images/CO24.png" style="float:left;padding:30px;" width="340" height="243">
+                    <p style="padding-top:30px;">CO2 equivalents are calculated based on the Global Warming Potential (GWP) (<a href="http://en.wikipedia.org/wiki/Global-warming_potential">http://en.wikipedia.org/wiki/Global-warming_potential</a>) of different gases. Global-warming potential (GWP) is a relative measure of how much heat a greenhouse gas traps in the atmosphere compared to how much heat is trapped by CO2.<br><br>
+                    The GWP depends on the absorption of infrared radiation by a given species, the frequency of light wavelengths that are absorbed, and the atmospheric lifetime of the species. For example, the GWP of methane for the 20-year time horizon is 72, which means that over the course of 20 years a kg of methane will trap 72 times more heat in the atmosphere than a kg of CO2.
+                    </p><br>
+
+                    <p style="padding-left:30px;padding-right:30px;padding-top:30px;">In HERO's case, CO2 equivalents reported represent the emissions from three main GHGs: CO2, methane (CH4), and N2O. The mass of emissions is multiplied by the 20-year GWP for each gas.</p>
+                    <img src="images/CO25.png" style="float:left;padding:30px;" width="340" height="243">
+                    <p style="padding:50px;padding-top:150px;">
+                    Worldwide, emissions of greenhouse gases from human activities increased by 26 percent from 1990 to 2005. Emissions of carbon dioxide, which account for nearly three-fourths of the total, increased by 31 percent over this period.
+                    </p><br>
+
+                    <p style="font-size:25px;color:#002D56;padding-left:30px;font-family:  'Roboto Slab', serif;font-weight:bold;">CH4</p><br>
+                    <p style="padding-left:30px;padding-right:30px;">Methane is emitted during the production and transport of coal, natural gas, and oil. Methane emissions also result from livestock and other agricultural practices and by the decay of organic waste in municipal solid waste landfills.</p>
+                    <p style="font-size:25px;color:#002D56;padding-top:50px;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;What can I do to lower emissions of greenhouse gases?</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/CO26.png" style="float:left;padding:30px;" width="340" height="243">
+                    <p style="padding:40px;">To reduce GHG emissions, use HERO to find out when emissions from electric power generation are high or low.<br><br>
+                    HERO uses real-time market pricing of electricity to estimate the marginal fuel type that is being used to produce electricity at any given time. This could be nuclear or renewable, coal, natural gas, or fuel oil. Each fuel type results in a different set emission rates for all pollutants. Learn more about marginal fuel type in HERO's About section.
+                    </p><br>
+
+                    <p style="padding-left:30px;padding-right:30px;padding-top:30px;">HERO was made to help you lower the emissions from your electricity use. You can take note of when emissions are typically high or low, and use these patterns to reduce your emissions by changing the timing of your electric load. You can set timers for certain appliances or battery chargers so that these electric loads occur when emissions are low.</p>
+
+                    <p style="font-size:25px;color:#002D56;padding-top:50px;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Related Links:</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <p style="padding-left:30px;padding-right:30px;padding-top:30px;">
+                        * <a href="http://epa.gov/climatechange/emissions/index.html">EPA: Greenhouse Gas Emissions<br></a>
+                         
+                        * <a href="http://epa.gov/climatechange/emissions/co2.html">EPA: CO2<br></a>
+                         
+                        * <a href="http://epa.gov/climatechange/emissions/co2.html">EPA: Methane<br></a>
+                         
+                        * <a href="http://en.wikipedia.org/wiki/Global-warming_potential">Global Warming Potential Calculation<br></a>
+                         
+                        * <a href="http://epa.gov/climatechange/indicators/slideshow.html">EPA: Climate Change Indicators in the USA<br></a>
+                         
+                        * <a href="http://epa.gov/climatechange/indicators/slideshow.html">Greenhouse Effect Picture<br></a>
+                         
+                        * <a href="http://epa.gov/climatechange/emissions/co2_human.html">Sources of CO2 Graphs<br></a>
+                         
+                        * <a href="http://epa.gov/climatechange/emissions/co2.html">Sources of Methane Picture<br></a>
+                         
+                        * <a href="http://www.epa.gov/apti/course422/ap5.html">Sources of SOx Picture<br></a>
+                         
+                        * <a href="http://www.epa.gov/nitrousoxide/sources.html">Sources of N2O Picture<br></a>
+                    </p>
+               </div>
+
+<!-- NO2 =======-->
+               <div id="con_one_2" style="display:none">
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;HERO—About NOX Emissions</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/NO21.png" style="float:left;padding:30px;" width="250" height="130">
+                    <br><p style="padding:30px;">NOX emissions come from fossil fuel combustion by power plants, vehicles, factories, and other sources.<br><br>
+                    Emissions of nitrogen oxides (NOX) and sulfur oxides (SOX) are the primary causes of acid rain and smog.</p><br><br>
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Acid Rain</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/NO22.png" style="float:left;padding:30px;" width="340" height="243">
+                    <p style="padding:30px;">
+                        <big><big>Acidity US Map</big></big><br><br>
+                    Sulfur dioxide (SO2) and nitrogen oxides (NOX) are the precursors for acid precipitation. Acid rain is a broad term referring to wet and dry deposition from the atmosphere containing high amounts of nitric and sulfuric acids.
+                    </p><br><br><br><br><br><br>
+                    <p style="float:left;padding:30px;">
+                    * Acidification of lakes and streams:<br>
+                        Surface waters (lakes and streams) and aquatic animals.<br>
+                    * Damage to forests:<br>
+                       Acid Rain effect on Forests.<br>
+                    * Accelerated decay of building materials and paints,<br> including historic buildings and statues that are national <br>monuments:<br>
+                       Automotive coatings, Materials.<br><br>
+                    For more information, visit:<br>
+                    <a href="http://www.epa.gov/acidrain/effects/">http://www.epa.gov/acidrain/effects/</a></p>
+                    <img src="images/NO23.png" style="float:left;padding:20px;" width="330" height="243">
+                    <br>
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Smog</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/NO24.png" style="float:left;padding:30px;" width="340" height="243">
+                    <p style="padding:30px;">NOX and SOX are the main causes of smog. The main component of smog, ozone (O3), is formed by a photochemical reaction of sunlight, NOX, and volatile organic compounds (VOCs).<br><br>
+                    Miles above the earth, ozone shields us from ultraviolet radiation, but at ground-level, ozone causes respiratory problems. Nitrates and sulfates also contribute to the formation of particulate matter (PM), another ingredient of smog."</p><br><br>
+
+                    <br><br>
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Effects of Smog</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <p style="float:left;padding:30px;">
+                    * Visibility degradation:<br>
+                    Reduces how far we can see through the air.<br>
+                    * Harm to public health:<br><br>
+                    SO2, NOX and ground-level ozone can have numerous <br>
+                    effects on human health, including hospitalization <br>
+                    for heart or lung disease and increased morbidity<br>
+                     and mortality risks associated with lung inflammation<br>
+                      including asthma, bronchitis, and emphysema.</p>
+                    <img src="images/NO25.png" style="float:left;padding:30px;" width="300" height="243">
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Sources of NOx</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/NO26.png" style="float:left;padding:30px;" width="340" height="340">
+                    <p style="padding:50px;">
+                        NOX emissions come from fossil fuel combustion by power plants, vehicles, factories, and other sources.<br><br>
+
+                        Nitrous oxide is emitted during agricultural and industrial activities, as well as during combustion of fossil fuels and solid waste.<br><br>
+
+                        * Nitrogen oxides form when fuel is burned at high temperatures.<br>
+                        * The primary sources of NOX are motor vehicles, electric utilities, and other industrial,<br> commercial, and residential sources that burn fuels.<br>
+                        * About 1/4 of all NOX come from electric power generation that relies on burning fossil fuels, like coal.</p><br><br><br><br>
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;What can I do to lower emissions of NOX?</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <p style="padding:30px;">
+                       To reduce acid rain, smog, and ground-level ozone, you can use HERO to find out when emissions from electric power generation are high or low.<br><br>
+ 
+                        HERO uses real-time market pricing of electricity to estimate the marginal fuel type that is being used to produce electricity at any given time. This could be nuclear or renewable, coal, natural gas, or fuel oil. Each fuel type results in a different set emission rates for all pollutants. Learn more about marginal fuel type in HERO's About section.<br><br>
+                         
+                        HERO was made to help you lower the emissions from your electricity use. You can take note of when emissions are typically high or low, and use these patterns to reduce your emissions by changing the timing of your electric load. You can set timers for certain appliances or battery chargers so that these electric loads occur when emissions are low.<br>v
+                         
+                        Since NOX primarily comes from vehicle emissions, reducing unnecessary trips in the car and using public transportation, biking, and walking when possible are great ways to reduce your NOX emissions.<br><br>
+                         
+                        Luckily, since the Acid Rain Program was established under the 1990 Clean Air Act by the EPA, emissions from NOX have dropped.
+                       </p>
+
+                       <p style="font-size:25px;color:#002D56;padding-top:30px;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Related Links:</big></p><hr style="border:solid 1px #BEBEBE;">
+                       <p style="padding-left:30px;padding-right:30px;padding-top:30px;">
+                        * <a href="http://www.epa.gov/acidrain/effects">Effects of Acid Rain:</a><br>
+                         
+                        * <a href="http://www.epa.gov/glo/health.html">Ozone Health Effects</a><br>
+                         
+                        * <a href="http://www.epa.gov/air/nitrogenoxides/">EPA – Nitrogen Dioxide<br></a>
+                         
+                        * <a href="http://isplotchy.blogspot.com/2010/12/cloud-smokestack-vapor-trail.html">Smokestack Picture<br></a>
+                         
+                        * <a href="http://science.howstuffworks.com/nature/climate-weather/atmospheric/acid-rain.htm">Acid Rain Picture<br></a>
+                         
+                        * <a href="http://www.britannica.com/EBchecked/media/69717/Branches-from-a-tree-in-Germanys-Black-Forest-show-needle">Acid Rain Branches Picture<br></a>
+                         
+                        * <a href="http://www.sciencedaily.com/releases/2007/05/070501081737.htm">Smog in Los Angeles Picture<br></a>
+                         
+                        * <a href="http://www.smh.com.au/environment/exit-the-best-solution-to-avoid-moscows-smog-20100810-11uhs.html">Smog Health Effects Picture<br></a>
+                         
+                        *<a href="http://www.e-inst.com/combustion/nitrogen-oxides-nox"> Sources of NOX Picture<br></a>
+                         
+                        * <a href="http://www.epa.gov/region1/eco/acidrain/intro.html">Acidity US Map Picture<br></a>
+                         
+                        * <a href="http://blog.ecoetsy.com/2011/08/epa-missed-deadline-for-ozone-clean-up-standards/html">Smog in NYC Picture<br></a>
+                         
+                        *<a href="http://www.epa.gov/airmarkets/progress/ARP_2.html"> NOX Emission Trends Picture<br></a>
+                    </p>
+
+
+               </div>
+<!-- SO2 =======-->
+               <div id="con_one_3" style="display:none">
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;HERO—About SOX Emissions</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/SO21.png" style="float:left;padding:30px;" width="340" height="243">
+                    <p style="padding:30px;">
+                    Emissions of nitrogen oxides (NOx) and sulfur oxides (SOx) are the primary causes of acid rain and smog.<br><br>
+
+                    Sulfur dioxide (SO2) and nitrogen oxides (NOx) are the precursors for acid precipitation. Acid rain is a broad term referring to wet and dry deposition from the atmosphere containing high amounts of nitric and sulfuric acids.
+                    </p><br><br><br><br><br><br><br>
+                    <p style="float:left;padding:30px;">
+                    NOX and SOX are the main causes of smog. The main<br> 
+                    component of smog, ozone (O3), is formed by a <br>
+                    photochemical reaction of sunlight, NOX, and volatile<br>
+                     organic compounds (VOCs).<br><br>
+
+                    Miles above the earth, ozone shields us from ultraviolet<br>
+                     radiation, but at ground-level, ozone causes respiratory <br>
+                     problems. Nitrates and sulfates also contribute to the <br>
+                     formation of particulate matter (PM), another ingredient<br>
+                      of smog.
+                    </p>
+                    <img src="images/SO22.png" style="float:left;padding:20px;" width="340" height="243">
+                    <br>
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Sources of SOx</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/SO23.png" style="float:left;padding:30px;" width="180" height="243">
+                    <p style="padding:30px;">
+                        SOx emissions come from fossil fuel combustion by power plants, vehicles, factories, and other sources.<br><br>
+
+                        In the United States, roughly 2/3 of all SO2 comes from electric power generation, especially by coal. Other sources include oil refineries, metal processing plants, and large non-road diesel burning equipment.</p><br><br><br><br><br><br><br><br>
+
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;What can I do to lower emissions of SOx?</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/SO24.png" style="padding:30px;" width="580" height="243">
+                    <p style="padding-left:30px;padding-right:30px;">
+                    To reduce acid rain, smog, and ground-level ozone, you can use HERO to find out when emissions from electric power generation are high or low.<br><br>
+ 
+                    HERO uses real-time market pricing of electricity to estimate the marginal fuel type that is being used to produce electricity at any given time. This could be nuclear or renewable, coal, natural gas, or fuel oil. Each fuel type results in a different set emission rates for all pollutants. Learn more about marginal fuel type in HERO's About section.<br><br>
+                     
+                    HERO was made to help you lower the emissions from your electricity use. You can take note of when emissions are typically high or low, and use these patterns to reduce your emissions by changing the timing of your electric load. You can set timers for certain appliances or battery chargers so that these electric loads occur when emissions are low.<br><br>
+                     
+                    Luckily, since the Acid Rain Program was established under the 1990 Clean Air Act by the EPA, emissions from SOx have dropped.<br><br>
+                    </p>
+
+                    <p style="font-size:25px;color:#002D56;padding-top:30px;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Related Links:</big></p><hr style="border:solid 1px #BEBEBE;">
+                       <p style="padding-left:30px;padding-right:30px;padding-top:30px;">
+                        * <a href="http://www.epa.gov/acidrain/effects">Effects of Acid Rain<br></a>
+                         
+                        * <a href="http://www.epa.gov/glo/health.html">Ozone Health Effects<br></a>
+                         
+                        * <a href="http://www.epa.gov/air/sulfurdioxide/">EPA – Sulfur Dioxide<br></a>
+                         
+                        * <a href="http://isplotchy.blogspot.com/2010/12/cloud-smokestack-vapor-trail.html">Smokestack Picture<br></a>
+                         
+                        * <a href="http://science.howstuffworks.com/nature/climate-weather/atmospheric/acid-rain.htm">Acid Rain Picture<br></a>
+                         
+                        * <a href="http://www.britannica.com/EBchecked/media/69717/Branches-from-a-tree-in-Germanys-Black-Forest-show-needle">Acid Rain Branches Picture<br></a>
+                         
+                        * <a href="http://www.sciencedaily.com/releases/2007/05/070501081737.htm">Smog in Los Angeles Picture<br></a>
+                         
+                        * <a href="http://www.smh.com.au/environment/exit-the-best-solution-to-avoid-moscows-smog-20100810-11uhs.html">Smog Health Effects Picture<br></a>
+                         
+                        * <a href="http://www.epa.gov/apti/course422/ap5.html">Sources of SOx Picture<br></a>
+                         
+                        * <a href="http://www.epa.gov/region1/eco/acidrain/intro.html">Acidity US Map Picture<br></a>
+                         
+                        * <a href="http://blog.ecoetsy.com/2011/08/epa-missed-deadline-for-ozone-clean-up-standards/html">Smog in NYC Picture<br></a>
+                         
+                        * <a href="http://www.epa.gov/airmarkets/progress/ARP_2.html">SOx Emission Trends Picture<br></a>
+                    </p>
+
+               </div>
+<!-- Mercury =======-->
+               <div id="con_one_4" style="display:none">
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;HERO—Introduction to Mercury Emissions</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/MO21.png" style="float:left;padding:30px;" width="320" height="380">
+                    <p style="padding:50px;">
+                    Mercury is an element naturally occurring in the earth&apos;s crust. It is found in many rocks, including coal. Burning of coal releases mercury into the atmosphere, where it can travel great distances and then eventually is deposited onto land or water. From this point, mercury can undergo different transformations such as methylation by bacteria and other natural processes.<br><br>
+
+                    Mercury (Hg) is a well known environmental toxin. It causes neurological and digestive health problems in the animals and humans that are exposed to it. Even very low concentrations of mercury in water pose a health risk, because mercury undergoes bioaccumulation. A substance that bioaccumulates is taken in by an organism faster than it can be eliminated. Bioaccumulation causes animals that are on top of the food chain to have higher levels of mercury accumulate in their bodies.</P><br><br>
+
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Health effects of mercury</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <p style="float:left;padding:30px;">
+                    Three forms of mercury in the environment cause different<br>
+                    health effects: methylmercury, elemental mercury, and other<br> 
+                    organic and inorganic mercury compounds. Methylmercury is the <br> 
+                    most toxic and has the most potential for bioaccumulation, <br> 
+                    thus people are exposed to methylmercury almost entirely by <br> 
+                    eating contaminated fish and wildlife that are at the top of <br> 
+                    aquatic food chains.<br><br> 
+ 
+                    Methylmercury is particularly harmful to brain and nerve <br> 
+                    development of fetuses, infants, and children. Elemental <br> 
+                    mercury can be inhaled into the lungs and causes neurological <br> 
+                    and neuromuscular symptoms like shaking, twitching, headaches,<br> 
+                     mood swings, and so on. Mercury compounds inhibit over 50 <br> 
+                     enzymes in the body and have severe corrosive effects on the<br> 
+                      internal digestive system, causing a wide range of symptoms.</p>
+                    <img src="images/MO22.png" style="float:left;padding:30px;" width="250" height="313">
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Sources of Mercury</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/MO23.png" style="float:left;padding:30px;" width="320" height="240">
+                    <p style="padding:50px;">
+                    Trace amounts of mercury exist in coal and other fossil fuels. When these fuels burn, mercury vapor can be released to the atmosphere where it may drift for a year or more, spreading with air currents over vast regions of the globe.<br><br>
+ 
+                    In the Great Lakes Region, the largest source of mercury is air pollution from coal electric utility boilers. Other sources of mercury include: fuels burned for electricity production and in automobiles, municipal waste, cement manufacturing, steel and other metal processing.</P><br><br>
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;What can I do to lower emissions of mercury?</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/MO24.png" style="padding:30px;" width="680" height="243">
+                    <p style="padding-left:30px;padding-right:30px;">
+                    To reduce mercury pollution, use HERO to find out when emissions from electric power generation are high or low.<br><br>
+ 
+                    HERO uses real-time market pricing of electricity to estimate the marginal fuel type that is being used to produce electricity at any given time. This could be nuclear or renewable, coal, natural gas, or fuel oil. Each fuel type results in a different set emission rates for all pollutants. Learn more about marginal fuel type in HERO&apos;s About section.<br><br>
+ 
+                    HERO was made to help you lower the emissions from your electricity use. You can take note of when emissions are typically high or low, and use these patterns to reduce your emissions by changing the timing of your electric load. You can set timers for certain appliances or battery chargers so that these electric loads occur when emissions are low.<br><br>
+ 
+                    The US EPA recently (December 2011) announced a new rule limiting the amount of mercury emissions from power plants for the first time.<br><br>
+                    </p>
+
+                    <p style="font-size:25px;color:#002D56;padding-top:30px;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Related Links:</big></p><hr style="border:solid 1px #BEBEBE;">
+                       <p style="padding-left:30px;padding-right:30px;padding-top:30px;">
+                         
+                        * <a href="http://www.michigan.gov/documents/deq/deq-aqd-toxics-hgfinalreport_272066_7.pdf">MDEQ Atmospheric Mercury Sources in the Great Lakes States<br></a>
+                         
+                        * <a href="http://www.cnn.com/2011/12/21/health/epa-mercury-rule/index.html">CNN: EPA requires limit on mercury emissions from power plants<br></a>
+                         
+                        * <a href="http://www.usgs.gov/themes/factsheet/146-00/">USGS Mercury in the Environment<br></a>
+                         
+                        * <a href="http://pubs.usgs.gov/fs/1995/fs216-95/">USGS Mercury Contamination of Aquatic Ecosystems<br></a>
+                         
+                        * <a href="http://www.epa.gov/hg/about.htm">EPA Mercury Basic Information<br></a>
+                         
+                        * <a href="http://www.epa.gov/hg/effects.htm">EPA Mercury Health effects<br></a>
+                         
+                        * <a href="http://www.glc.org/mercuryconnections/">Great Lakes Commission<br></a>
+                         
+                        * <a href="http://www.fossil.energy.gov/programs/powersystems/pollutioncontrols/overview_mercurycontrols.html">US DOE Mercury Emission Control RD<br></a>
+                         
+                        * <a href="http://chemwiki.ucdavis.edu/Inorganic_Chemistry/Case_Studies/Case_Study%3A_Elemental_Toxicity_in_Animals">UC Davis Study of Elemental Toxicity<br></a>
+                    </p>
+
+               </div> 
+<!-- Lead =======-->
+               <div id="con_one_5" style="display:none">
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;HERO—Introduction to Lead Emissions</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/LO21.png" style="float:left;padding:30px;" width="250" height="130">
+                    <p style="padding:30px;">Lead is an element naturally occurring in small amounts in rocks and soil (including coal). Most lead emissions in the past came from leaded gasoline in automobiles. In the US, leaded fuel began to be phased out in 1973 and was completely banned for on-road fuel in 1996. Today, industrial processes, primarily metals processing, account for a large portion of lead emissions to the atmosphere.</p><br><br>
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Exposure to lead</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/LO22.png" style="float:left;padding:30px;" width="240" height="143">
+                    <p style="padding:30px;">
+                    Lead is an element naturally occurring in small amounts in rocks and soil (including coal). Most lead emissions in the past came from leaded gasoline in automobiles. In the US, leaded fuel began to be phased out in 1973 and was completely banned for on-road fuel in 1996. Today, industrial processes, primarily metals processing, account for a large portion of lead emissions to the atmosphere.
+                    </p><br><br>
+                    <p style="float:left;padding:30px;">
+                    People can get lead in their body if they:<br><br>
+ 
+                    * Put their hands or other objects covered with lead dust<br>
+                     in their mouths.<br>
+                    * Eat paint chips or soil that contains lead.<br>
+                    * Breathe in lead dust, especially during renovations that<br>
+                     disturb painted surfaces.<br>
+                    * Lead is more dangerous to babies and young children <br>
+                    because they often put their hands and other objects that<br>
+                     could have lead dust on them in their mouths.</p>
+                    <img src="images/LO23.png" style="float:left;padding:30px;" width="320" height="243">
+                    <br>
+
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Health effects of lead</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/LO24.png" style="float:left;padding:30px;" width="240" height="343">
+                    <p style="padding:30px;">
+                    Lead Health Effects - X ray demonstrating the characteristic finding of lead poisoning, dense metaphyseal lines.<br><br>
+ 
+                    Childhood lead poisoning remains a major environmental health problem in the United States.<br><br>
+                     
+                    * Lead is more dangerous to children because:<br>
+                    o Children's growing bodies absorb more lead.<br>
+                    o Children's brains and nervous systems are more sensitive to the damaging effects of lead.<br><br>
+                     
+                    * If not detected early, children with high levels of lead in their bodies can suffer from:<br>
+                    o Damage to the brain and nervous system<br>
+                    o Behavior and learning problems, such as hyperactivity<br>
+                    o Slowed growth<br>
+                    o Hearing problems<br>
+                    o Headaches<br>
+                    </p><br><br>
+                    <p style="float:left;padding:30px;">
+                    
+                    * Lead is also harmful to adults. Adults can suffer from:<br>
+                    o Reproductive problems (in both men and women)<br>
+                    o High blood pressure and hypertension<br>
+                    o Nerve disorders<br>
+                    o Memory and concentration problems<br>
+                    o Muscle and joint pain <br>                                   
+                    more information: <a href="http://www2.epa.gov/lead#health">http://www2.epa.gov/lead#health</a></p>
+                    <img src="images/LO25.png" style="float:left;padding-left:30px;" width="320" height="203">
+                    <br>
+
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Sources of Lead</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/LO26.png" style="float:left;padding:30px;" width="350" height="280">
+                    <p style="padding:50px;">
+                    In the past, motor vehicles were the biggest source of lead emissions. The good news is that between 1970 and 2005, estimated nationwide lead emissions decreased by 99 percent, mostly due to elimination of leaded gasoline. Leaded gas for on-road vehicles was completely phased out in 1996.<br><br>
+ 
+                    Today, lead pollution from lead smelters, metal processing plants and incinerators are the biggest sources of atmospheric lead. Other ways lead can enter the environment are through mining practices, steel industry, crop enhancers, improperly disposed of batteries. Lead from coal represents about 1 to 1.5% of total US emissions.</P><br><br>
+
+
+                    <p style="font-size:25px;color:#002D56;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;What can I do to lower emissions of lead?</big></p><hr style="border:solid 1px #BEBEBE;">
+                    <img src="images/LO27.png" style="padding:30px;" width="680" height="243">
+                    <p style="padding-left:30px;padding-right:30px;">
+                    To reduce lead pollution, use HERO to find out when emissions from electric power generation are high or low.<br><br>
+ 
+                    HERO uses real-time market pricing of electricity to estimate the marginal fuel type that is being used to produce electricity at any given time. This could be nuclear or renewable, coal, natural gas, or fuel oil. Each fuel type results in a different set emission rates for all pollutants. Learn more about marginal fuel type in HERO's About section.<br><br>
+ 
+                    HERO was made to help you lower the emissions from your electricity use. You can take note of when emissions are typically high or low, and use these patterns to reduce your emissions by changing the timing of your electric load. You can set timers for certain appliances or battery chargers so that these electric loads occur when emissions are low.<br><br>
+                    </p>
+
+
+                    <p style="font-size:25px;color:#002D56;padding-top:30px;font-family:  'Roboto Slab', serif;font-weight:bold;"><big>  &nbsp;Related Links:</big></p><hr style="border:solid 1px #BEBEBE;">
+                       <p style="padding-left:30px;padding-right:30px;padding-top:30px;">
+                         
+                        * <a href="http://www.michigan.gov/deq/0,4561,7-135-3307_29693_30031-90418--,00.html">Michigan DEQ How Does Lead Affect Our Environment?<br></a>
+                         
+                        * <a href="http://www.epa.gov/lead/pubs/leadinfo.htm#health">EPA Health Effects of Lead</a><br>
+                         
+                        * <a href="http://www.cleanairtrust.org/lead.html">Clean Air Trust</a><br>
+                         
+                        * <a href="http://www.belleville.k12.wi.us/bhs/health/environment/leadpollution.htm">Lead Pollution and The Environment</a><br>
+                         
+                        * <a href="http://www.seas.columbia.edu/earth/wtert/sofos/Albina_njt_ASMEpaper_final.pdf">Emissions from Waste-to-Energy: A Comparison with Coal-fired Power Plants</a><br>
+                         
+                        * <a href="http://cfpub.epa.gov/eroe/index.cfm?fuseaction=detail.viewIn">EPA Report on the Environment Lead Emissions</a><br>
+                         
+                        * <a href="http://dsc.discovery.com/tv/how-stuff-works/lead.html">Discovery: Lead</a><br>
+                         
+                        * <a href="http://www.extension.umn.edu/distribution/horticulture/DG2543.html">U of Minnesota Extention Sources of Lead in the Environment</a><br>
+                         
+                        * <a href="http://en.wikipedia.org/wiki/Lead_poisoning">Lead Health Effects</a><br>
+                    </p>
+
+
+               </div> 
+             </div>
+        </div>
+
+<!--         <div style="float:left;height:400px;width:200px; margin-top:30px;">
+            <ul id="tabs" style="list-style:none;">
+                <li> <a href="javascript:;"> 
+                    <h3>CO2</h3></a></li>
+                <li> <a href="javascript:;"> 
+                    <h3>NO2</h3></a></li>
+                <li> <a href="javascript:;"> 
+                    <h3>SO2</h3></a></li>
+                <li> <a href="javascript:;"> 
+                    <h3>Mercury</h3></a></li>
+                <li> <a href="javascript:;"> 
+                    <h3>Lead</h3></a></li>
+            </ul>
+        </div> -->
+
+</div>
+
+
+
+
+
+
+    <!-- foot -->
+<div id="foot" style="margin-top:0px;">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

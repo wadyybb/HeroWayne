@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Hero</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+<script type="text/javascript" src="Cheng.js" charset="utf-8"></script> 
+ 
+
+<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="jquery/jquery.flexslider.js"></script>  
+  
+  <script type="text/javascript">  
+      $(window).load(function() {
+        $('.flexslider').flexslider();
+      });
+  </script>  
+
+<style type="text/css">
+    li {
+        list-style:none;
+        text-align: -webkit-match-parent;
+        }
+    ol{
+        padding-left:0px;
+    }
+    #detail {
+
+    }
+    #detail :hover{
+
+    }
+</style>
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for<br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;overflow:hidden;" >
+                <div style="display:inline;float:left; " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput"onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="aboutbuttonBackground">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span >Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div id="main" style="height:1250px;margin-top:10px;">
+
+    <div style="margin-top:96px;"><h3>   HERO - Home Emissions Read-Out</h3></div>
+        <hr style="border:solid 1px black;">
+
+        <div class="flexslider" style="margin-top:10px;">
+                  <ul class="slides">
+                    <li>
+                      <img src="images/h1.png" />
+                    </li>
+                    <li>
+                      <img src="images/h2.png" />
+                    </li>
+                    <li>
+                      <img src="images/h3.png" />
+                    </li>
+                    <li>
+                      <img src="images/h4.png" />
+                    </li>
+                    <li>
+                      <img src="images/h5.png" />
+                    </li>
+                    <li>
+                      <img src="images/h6.png" />
+                    </li>
+                    <li>
+                      <img src="images/h7.png" />
+                    </li>
+                  </ul>
+                </div>
+
+
+
+        <div style="float:left;width:700px;">
+           
+            <div id="upperwords" style="width:700px;height:50px;border:1px solid #8FD7F4;">
+                <p style="padding-left: 30px;">    Your HERO Index</p>
+            </div>
+                </br>
+
+
+                <!-- map -->
+            <div id="readout" style="width:700px;height:650px;border:1px solid #8FD7F4;">
+                <p class="shortcutwords">Input zipcode or choose from map below: </p>
+                <input  type="text" value="" id="firstsearch" onkeydown= "if(event.keyCode==13){btn.click();}"/>
+                <input  class="searchbtn" id="btn" type="button" value="Go" onclick="search();" style="cursor:pointer;"/>
+
+                <div id="map-canvas" style="margin-left:8px;margin-top:8px;height:580px; width:680px; border:1px solid #8FD7F4;">
+
+                </div>
+            </div>
+
+                <!-- detail read out -->
+            <div id="showreadout" style="display:none; width:700px;height:730px;border:1px solid #8FD7F4;">
+                <div >
+                     <img src='images/x.png' alt='' style="float:right;cursor:pointer;" onclick="or();"/>
+                </div>
+
+                <p class="shortcutwords">Input zipcode to search for new one: </p>
+                <input  type="text" value="" id="inputAddress" onkeydown= "if(event.keyCode==13){newbtn.click();}"/>
+                <input  class="searchbtn" id="newbtn" type="button" value="GO" onclick="newsearch();" style="cursor:pointer;"/>
+                
+
+                <div id="show" style="margin-left:8px;margin-top:8px;height:660px; width:680px; border:1px dashed #8FD7F4;">
+                    <div style="float:left;">
+                        <h4>Location:</h4><br/> <h4 style="height: 20px;" id="Place"></h4><br/>
+                        <h2 style="display:none;">LMP: </h2><h2 style="display:none;" id="lmpValue"></h2>
+                        <h2 style="display:none;">CPN: </h2><h2 style="display:none;" id="CPNvalue"></h2>
+                        <h2 style="display:none;">Lat </h2><h2 style="display:none;" id="LatValue"></h2>
+                        <h2 style="display:none;">Lng </h2><h2 style="display:none;" id="LngValue"></h2>
+                        <h2>Zipcode: </h2><h2 id="zipcode"></h2>
+                    </div>
+
+                    <div style="height:86px;width:292px;margin-top:15px;margin-left:350px;background:url(images/currentback.jpg) no-repeat;padding:10px;position:relative;">
+                        <p><big>Current HERO Index:</big></p>
+                        <!-- <img id="all" src="images/blank.png" style="margin-top:12px;margin-left:10px;margin-right:10px;" >
+                        <p id="currentword" style="display:inline;"><big><big>Blank</big></big></p> -->
+                        <input type="image" src="images/takeaction.jpg" onclick="location.href='Actions.html'" style="margin-left:10px;margin-top:13px;">
+                        <img id="cC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; right:45px;top:10px;">
+                        <img id="cS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; right:45px;top:10px;">
+                        <img id="cN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; right:45px;top:10px;">
+                        <img id="cP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; right:45px;top:10px;">
+                        <img id="cM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; right:45px;top:10px;">
+                    </div>
+                    <br>
+                    <p style="margin-top:-25px;margin-left:10px;">The HERO Index provides an at-a-glance view of current and projected rates of air pollution from electricity generation. The color green indicates times when air emissions are low. Red indicates times when air emissions are high. Use the table below to select the greenest time to engage in energy intensive activities.</p>
+
+                    <table  style="margin-top:5px;margin-left:10px;" class="showtable">
+                        <tr height="30">
+                            <td  >&nbsp;</td>
+                            <td > <p name="TimeValue1"> Current</p> </td>
+                            <td > <p name="TimeValue2"> 2 </p> </td>
+                            <td > <p name="TimeValue3"> 4 </p> </td>
+                            <td > <p name="TimeValue4"> 6 </p> </td>
+                            <td > <p name="TimeValue5"> 8 </p> </td>
+                            <td > <p name="TimeValue6"> 10 </p> </td>
+                            <td > <p name="TimeValue7"> 12 </p> </td>
+                            <td > <p name="TimeValue8"> 14 </p> </td>
+                            <!-- <td > <p name="TimeValue9"> 16 </p> </td>
+                            <td > <p name="TimeValue10"> 18 </p> </td> -->
+                        </tr>
+                        <tr height="75px;">
+                            <td >Emissions</td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="C_8" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1;top:-33px; left:0px;">
+                                <img id="S_8" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2;top:-33px; left:0px; bottom:0px;">
+                                <img id="N_8" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3;top:-33px; left:0px;">
+                                <img id="P_8" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4;top:-33px; left:0px;">
+                                <img id="M_8" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5;top:-33px; left:0px;">
+                            </div>
+                            </td>
+                            <!-- <td style="padding-top:5px;">
+                                <img id="all_2" src="images/original.png" width="70" height="70" style="position:absolute;z-index:1;">
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img id="all_3" src="images/original.png" width="70" height="70" style="position:absolute;z-index:1;">
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img id="all_4" src="images/original.png" width="70" height="70" style="position:absolute;z-index:1;">
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img id="all_5" src="images/original.png" width="70" height="70" style="position:absolute;z-index:1;">
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img id="all_6" src="images/original.png" width="70" height="70" style="position:absolute;z-index:1;">
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img id="all_7" src="images/original.png"width="70" height="70"  style="position:absolute;z-index:1;">
+                            </td>
+                            <td style="padding-top:5px;">
+                                <img id="all_8" src="images/original.png"width="70" height="70" style="position:absolute;z-index:1;">
+                            </td> -->
+                          <!--   <td style="padding-top:5px;"><img id="all_9" src="images/original.png" width="70" height="70" ></td>
+                            <td style="padding-top:5px;"><img id="all_10" src="images/original.png" width="70" height="70" ></td> -->
+                        </tr>
+                    </table>
+
+                    <div id="intro" style="text-align:center;margin-top:5px;" ><img src='images/intro.png' style="width:500px;height:65px;" alt=''/></div>
+
+
+                    <div style="height:250px; margin-top:1px; border-top:1px dashed #8FD7F4;">
+                        <div style="height:40px;width:675px; background:#8FD7F4;box-shadow: 5px 5px 5px #888888;">
+                            <p id="detail" style="color:#fff;font-size:20px;line-height:40px;">   &nbsp;&nbsp;&nbsp;&nbsp;Want More Details?</p>
+                        </div>
+
+                        <div style="padding:5px;">
+                            The HERO Index is based on emission rates of 5 air pollutants: sulfur dioxide (acid rain), nitrogen oxides (smog), global warming potential (climate change), mercury (neurotoxicity), and lead (neurotoxicity). Click the graphics below to learn more about current and projected rates at which these pollutants are entering our air. 
+                        </div>
+
+                        <div style="float:left;height:160px; width:333px;">
+                            <div style="height:100px;width:230px;border:1px black solid;margin-left:50px;margin-top:20px;border-radius:0.5em;padding:10px;"> 
+                                <img src="images/u28.jpg"  width="100" height="100" style="float:left;">
+                                <div style="float:left;height:75px;width:100px;border:1px black solid;margin-left:8px;border-radius:0.5em;padding:10px;background:#BEBEBE;cursor:pointer;" 
+                                onclick="gographic();">
+                                    <p style="margin-top:5px;" >Click to see "Read-out" in graph format.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float:left;height:170px; width:333px;">
+                            <div style="height:110px;width:230px;border:1px black solid;margin-left:50px;margin-top:20px;border-radius:0.5em;padding:5px;">
+                                <img src="images/u416.png" width="110" height="110" style="float:left;">
+                                <div style="float:left;height:75px;width:90px;border:1px black solid;margin-left:5px;margin-top:5px;border-radius:0.5em;padding:10px;background:#BEBEBE;cursor:pointer;" onclick="gotable();">
+                                    <p style="margin-top:5px;">Click to see "Read-out" in table format.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div> 
+
+        <div style="float:left;width:330px;margin-left:20px;">
+            <div id="upperwords" style="width:330px;height:50px;border:1px solid #8FD7F4;">
+                <p style="padding-left: 30px;">    Get HERO by Email</p>
+            </div></br>
+            <div style="width:310px;height:250px;border:1px solid #8FD7F4;padding:10px;">
+                    
+                    <p style="font-size:17px;"><img src="images/u693.png" width="140;" style="float:left;padding:5px;padding-right:15px;">
+                    <br>Get your completely free personal electricity forecast delivered to your email every day.  No hassle.  Great tips.  Make a difference.
+
+                    <input type="image" src="images/gosignuplong.png" width="300" height="40" name="Submit" onclick="location.href='SignUp.html'" style="margin-top:10px;"></p>
+
+
+            </div></br>
+
+            <div id="upperwords" style="width:330px;height:50px;border:1px solid #8FD7F4;">
+                <p style="padding-left: 30px;">    What We Are Doing</p>
+            </div>
+            <div style="width:330px;height:250px;border:1px solid #8FD7F4;">
+                <iframe width="330" height="250" src="https://www.youtube.com/embed/BfLTY8sFiQ8?rel=0&modestbranding=1&showinfo=1&autohide=1" frameborder="0" webkitallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+</div>
+
+
+    <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Energy Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+        
+    <!-- <div class="clear" style="height: 9px"></div> -->
+    <!-- content -->
+
+
+</body>
+
+
+  <script type="text/javascript">
+ 
+// var ge;
+ var map;
+function initialize() {
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+      function onPositionUpdate(position)
+        {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            initmark(lat,lng);
+            google.maps.event.addListener(map, 'click', function(event) {
+                    // window.location.href = "show.html?lan="+event.latLng.lat()+"&long="+event.latLng.lng();
+
+                    var inputLat = event.latLng.lat();
+                    var inputLng = event.latLng.lng();
+                
+
+                    $.get('https://maps.google.com/maps/api/geocode/xml',{"sensor":"false","language":"en","latlng":inputLat+","+inputLng},function(xml,status){
+                            
+                        $.getJSON("http://141.217.48.221/App/index.php",{"lng":inputLng,"lat":inputLat},function(json){
+
+                         if(json.nearest_cpn_distance == "too far"){
+                            alert("This location is out of the HERO range. Please enter another location.")
+                         }
+                         else{
+
+
+                            // ======get  city name=============
+                            var city,state,zipcode;
+                            var cityinfo = $(xml).find('address_component').each(function(i,item){
+                                $loc = $(this);
+                                if($loc.find("type").text()=='localitypolitical'){
+                                    city=$loc.find("short_name").text();
+                                    return false;
+                                }
+                            });
+
+                            //   ========get state ======
+                            var stateinfo = $(xml).find('address_component').each(function(i,item){
+                                $loc = $(this);
+                                if($loc.find("type").text()=='administrative_area_level_1political'){
+                                    state=$loc.find("short_name").text();
+                                    return false;
+                                }
+                            });
+
+                            // =========Zipcode======
+                            var Zipcodeinfo = $(xml).find('address_component').each(function(i,item){
+                                $loc = $(this);
+                                if($loc.find("type").text()=='postal_code'){
+                                    zipcode=$loc.find("short_name").text();
+                                    return false;
+                                }
+                            });
+
+                            var LocatID= document.getElementById("Place"); 
+                            LocatID.innerHTML = city+', '+state;
+                            var ZipcodeId = document.getElementById("zipcode");
+                            ZipcodeId.innerHTML = zipcode;
+
+
+                            getMsg(event.latLng.lng(),event.latLng.lat());
+                            document.getElementById('readout').style.display='none';
+                            document.getElementById('showreadout').style.display='block';
+                      }
+                    });
+                    
+
+                    var LatId= document.getElementById("LatValue");
+                        LatId.innerHTML = event.latLng.lat();
+
+                    var LngId= document.getElementById("LngValue");
+                        LngId.innerHTML = event.latLng.lng();
+                    
+                    });
+            });
+
+        initCallback(); 
+            
+        }
+ 
+ function intcity(name,lan,long){
+    var L = new google.maps.LatLng(lan,long);
+    var marker = new google.maps.Marker({
+      position: L,
+      map: map,
+      title: name
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        // window.location.href = "show.html?lan="+lan+"&long="+long;
+        //map.setCenter(marker.getPosition());
+
+           
+
+
+        $.get('https://maps.google.com/maps/api/geocode/xml',{"sensor":"false","language":"en","latlng":lan+","+long},function(xml,status){
+                            
+
+                    $.getJSON("http://141.217.48.221/App/index.php",{"lng":long,"lat":lan},function(json){
+
+                         if(json.nearest_cpn_distance == "too far"){
+                            alert("This location is out of the HERO range. Please enter another location.")
+                         }
+                         else{
+
+
+                            // ======get  city name=============
+                            var city,state,zipcode;
+                            var cityinfo = $(xml).find('address_component').each(function(i,item){
+                                $loc = $(this);
+                                if($loc.find("type").text()=='localitypolitical'){
+                                    city=$loc.find("short_name").text();
+                                    return false;
+                                }
+                            });
+
+                            //   ========get state ======
+                            var stateinfo = $(xml).find('address_component').each(function(i,item){
+                                $loc = $(this);
+                                if($loc.find("type").text()=='administrative_area_level_1political'){
+                                    state=$loc.find("short_name").text();
+                                    return false;
+                                }
+                            });
+
+                            // =========Zipcode======
+                            var Zipcodeinfo = $(xml).find('address_component').each(function(i,item){
+                                $loc = $(this);
+                                if($loc.find("type").text()=='postal_code'){
+                                    zipcode=$loc.find("short_name").text();
+                                    return false;
+                                }
+                            });
+
+                            var LocatID= document.getElementById("Place"); 
+                            LocatID.innerHTML = city+', '+state;
+                            var ZipcodeId = document.getElementById("zipcode");
+                            ZipcodeId.innerHTML = zipcode;
+
+
+                            var LatId= document.getElementById("LatValue");
+                                LatId.innerHTML = lan;
+
+                            var LngId= document.getElementById("LngValue");
+                                LngId.innerHTML = long;
+                            
+
+                            getMsg(long,lan);
+                            document.getElementById('readout').style.display='none';
+                            document.getElementById('showreadout').style.display='block';
+
+                        }
+                    });
+                
+            });
+        
+  });
+
+ }
+
+ 
+ function initmark(lat,lng){
+    var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(lat,lng)
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+    intcity('Location',lat,lng);
+}
+          
+function initCallback(instance) {
+    
+}
+    
+function base_setup(instance){
+}
+    
+function onFailUpdatePosition(error)
+        {   
+            
+        }
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(onPositionUpdate, onFailUpdatePosition);
+}else{
+    alert("不支持Location");
+}   
+</script>
+
+
+
+
+</html>

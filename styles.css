@@ -1,0 +1,772 @@
+
+div{
+	font-family: Calibri;
+}
+
+*
+{
+border: 0;
+margin: 0;
+}
+
+img
+{
+border: 0px;
+}
+
+h3{
+	font-family: 'Roboto Slab', serif;
+	font-size: 31px;
+	padding-left:10px;
+	padding-top: 10px;
+	display: inline-block;
+	text-decoration: bold;
+	font-weight: bold;
+	color: #000;
+}
+
+h2{
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	padding-left:10px;
+	padding-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+}
+
+h4{
+	font-family: 'Roboto Slab', serif;
+	font-size: 20px;
+	padding-left:10px;
+	padding-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+}
+
+ul#aboutlist li{
+	float:left;
+
+}
+
+ul#tabs li {
+	font-size: 12px;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	border:solid 1px black;
+	margin-left:0px;
+}
+
+ul#tabs li a {
+	color: #222;
+	text-decoration: none;
+	display: block;
+}
+
+ul#tabs li a.current {
+	background:  #8FD7F4;
+	color: #FFF;
+}
+ul#tabs li a.current:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+
+.clear{
+	width: 100%;
+	height: 1px;
+	clear: both;
+}
+
+body{
+	/*font: 12px Arial, Helvetica, 'Roboto Slab', serif;
+	color: #353535;
+	background: url(images/Backgrounds.jpg) top center repeat #000;
+	line-height: 18px;*/
+}
+
+#foot{
+	height:180px;
+	border:1px solid black;
+	/*background: #A5DFF6;*/
+	margin-top:30px;
+	background: #8FD7F4;
+	float:bottom;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F8FD7F4', endColorstr='#7F8FD7F4');
+}
+:root #foot {
+	filter:none;	 /*处理IE9浏览器中的滤镜效果*/
+	background-color:rgba(143,215,244,0.5);
+}
+
+#inputAddress{
+	border: 1px solid black; 
+    padding: 3px;
+    margin: 0 0 10px 10px;
+}
+
+#firstsearch{
+	border: 1px solid black; 
+    padding: 3px;
+    margin: 0 0 10px 10px;
+}
+
+.zipcode {
+	border: 1px solid white; 
+    padding: 3px;
+    margin: 0 0 10px 10px;
+}
+
+.searchbtn{
+	font-size: 15px;
+	width:47px;
+	height:35px;
+	background: url(images/u214.png);
+    margin: 0 0 10px 0px;
+}
+
+
+
+
+/*input[type="button"]:hover{
+	padding-bottom: 7px;
+	background: url(images/u214_mouseOver.png);
+}*/
+
+#upperwords{
+	line-height:50px;
+	font-family: 'Roboto Slab', serif;
+	font-size: 28px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+	margin-top: 10px;
+	background: #A5DFF6;
+}
+
+
+
+#main {
+	text-align:left;
+	width: 1061px;
+	margin: 0 auto auto auto;
+}
+
+
+.shortcut{
+	width:530px;
+	height:73px;
+	margin-top: 10px;
+	float:right;
+	padding-left:0px;
+	background: url(images/shorcut.jpg) no-repeat;
+}
+
+.shortcutwords{
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	padding-left:40px;
+	padding-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+}
+
+
+#shortcutoverlay {
+    display: none; /* ensures it’s invisible until it’s called */
+    position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
+    right: 252px; /* positions the div half way horizontally */
+    top: 200px; /* positions the div half way vertically */
+    padding: 20px; 
+    border: 5px solid black;
+    background-color: #ffffff;
+    width: 520px;
+    height: 180px;
+    border-radius:2em;
+    z-index: 90; /* makes the div the top layer, so it’ll lay on top of the other content */
+}
+
+#shortcutclose {
+    display: block; /* ensures it’s invisible until it’s called */
+    position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
+    right: 252px; /* positions the div half way horizontally */
+    top: 200px; /* positions the div half way vertically */
+    z-index: 100; /* makes the div the top layer, so it’ll lay on top of the other content */
+}
+
+#fade {
+    display: none;  /* ensures it’s invisible until it’s called */
+    position: fixed;  /* makes the div go into a position that’s absolute to the browser viewing area */
+    left: 0%; /* makes the div span all the way across the viewing area */
+    top: 0%; /* makes the div span all the way across the viewing area */
+    background-color: #8FD7F4;
+    -moz-opacity: 0.2; /* makes the div transparent, so you have a cool overlay effect */
+    opacity: .20;
+    filter: alpha(opacity=20);
+    width: 100%;
+    height: 100%;
+    z-index: 80; /* makes the div the second most top layer, so it’ll lay on top of everything else EXCEPT for divs with a higher z-index (meaning the #overlay ruleset) */
+}
+
+#shortcutname{
+	font-family:  'Roboto Slab', serif;
+	font-size: 18px;
+	padding-left:10px;
+	padding-top: 10px;
+	display: inline-block;
+	text-decoration: none;
+	font-weight: bold;
+	color: #000;
+}
+
+
+#loginsignup{
+	text-align: center;
+	width: 1061px;
+	margin:0 auto auto auto;
+}
+
+#loginsignup a{
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	display: inline-block;
+	text-decoration: underline;
+	color: #8FD7F4;
+}
+
+#loginsignup a:hover{
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+	display: inline-block;
+	text-decoration: underline;
+	color: #000;
+}
+
+	
+#buttons{
+	text-align:center;
+	height: 60px;
+	width: 1061px;
+	position: absolute;
+	z-index:2;
+	margin: 0 auto auto auto;
+	/*padding: 0px 0px 0px 0px;*/
+	/*background: #8FD7F4;*/
+	/*filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F8FD7F4', endColorstr='#7F8FD7F4');*/
+}
+
+/*:root #buttons {
+	filter:none;	 处理IE9浏览器中的滤镜效果
+	background-color:rgba(143,215,244,0.5);
+}*/
+
+/*#buttons a {
+	font-family:  'Roboto Slab', serif;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+}*/
+
+/*#buttons a:hover {
+	font-family:  'Roboto Slab', serif;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #000;
+	text-align: center;
+	}*/
+
+#biaoge{
+	margin:6px;
+	padding:2px;
+	text-align:center;
+}
+
+#biaoge table{
+	margin:0px auto;
+}
+
+.shorttable 
+{ 
+border-collapse: collapse; 
+border: none; 
+width: 500px; 
+text-align: center;
+} 
+.shorttable td
+{
+	width:60px;
+}
+
+
+.showtable 
+{ 
+border-collapse: collapse; 
+border: none; 
+width: 660px; 
+text-align: center;
+} 
+.showtable td 
+{ 
+border: solid #000 1px; 
+width:60px;
+} 
+
+.but_razd { 
+	width: 140px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+	float:left;
+	background: url(images/140.png);
+}	
+
+.but_razd a{
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+}
+
+.but_razd a:hover{
+	font-family:  'Roboto Slab', serif;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #000;
+	text-align: center;
+}
+
+.ebut_razd { 
+	width: 190px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+	float:left;
+	background: url(images/190.png);
+}	
+
+.ebut_razd a{
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+}
+
+.ebut_razd a:hover{
+	font-family:  'Roboto Slab', serif;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #000;
+	text-align: center;
+}
+
+.tbut_razd { 
+	width: 160px;
+	height: 60px;
+	line-height: 60px;
+	font-weight: bold;
+	float:left;
+	background: url(images/160.png);
+}	
+
+.tbut_razd a{
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #fff;
+	text-align: center;
+}
+
+.tbut_razd a:hover{
+	font-family:  'Roboto Slab', serif;
+	font-size: 24px;
+	display: block;
+	text-decoration: none;
+	color: #000;
+	text-align: center;
+}
+
+#header {
+	height: 160px;
+}
+
+#logo {
+	width: 30px;
+	height: 60px;
+	padding: 12px 0px 0px 0px;
+	text-align: center;
+}
+
+#logo a {
+	text-decoration: none;
+	font-size: 36px;
+	color: #fff;
+	font-weight: bold;
+}
+
+#div-relative{
+	text-align: left;
+	position:relative;
+	color:#000;
+	height: 393px;
+	width:auto;
+	margin: 6px auto auto auto;
+	background: url(images/cloud.png) repeat-x;
+}
+
+#buttonBackground{
+	text-align:center;
+	height: 60px;
+	width: 100%;
+	position: absolute;
+	z-index:3;
+	margin: 100px auto auto auto;
+	padding: 0px 0px 0px 0px;
+	background: #8FD7F4;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F8FD7F4', endColorstr='#7F8FD7F4');
+}
+
+:root #buttonBackground {
+	filter:none;	 处理IE9浏览器中的滤镜效果
+	background-color:rgba(143,215,244,0.5);
+}
+
+#aboutbuttonBackground{
+	text-align:center;
+	height: 60px;
+	width: 100%;
+	position: absolute;
+	z-index:3;
+	margin: 6px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background: #8FD7F4;
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F8FD7F4', endColorstr='#7F8FD7F4');
+}
+
+:root #aboutbuttonBackground {
+	filter:none;	 处理IE9浏览器中的滤镜效果
+	background-color:rgba(143,215,244,0.5);
+}
+
+#div-smaller{
+	text-align: center;
+	position:relative;
+	color:#000;
+	height: 400px;
+	width:1061px;
+	margin: 0 auto auto auto;
+}
+
+#smaller{
+	text-align: center;
+	position:relative;
+	color:#000;
+	height: 60px;
+	width:1061px;
+	margin: 0 auto auto auto;
+}
+
+	
+#logo h2 a{
+	font-size: 18px;
+	font-family:  'Roboto Slab', serif;
+	color:#fff;
+	text-align: center;
+}
+
+/* top */
+.top_img { 
+	position: absolute;
+	text-align: center;
+	height:400px;
+	width: 1061px;
+	z-index:0;
+	/*background: url(images/cloud.png) repeat-x;*/ 
+}
+
+.top_top {
+	background: url(images/top_top.png) left top no-repeat;
+	height: 12px;
+}	
+
+
+.top_bot {
+	background: url(images/top_bot.png) left bottom no-repeat;
+	height: 12px;
+}	
+
+
+
+
+h1{
+	padding: 22px 0 10px 0px;
+	text-align: right;
+	font-size: 24px;
+	color: #fff;
+	font-weight: normal;	
+}
+
+
+ /*about us*/
+ #slides {
+      display: none
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:3px;
+    }
+
+    a.slidesjs-next,
+    a.slidesjs-previous,
+    a.slidesjs-play,
+    a.slidesjs-stop {
+      background-image: url(img/btns-next-prev.png);
+      background-repeat: no-repeat;
+      display:block;
+      width:12px;
+      height:18px;
+      overflow: hidden;
+      text-indent: -9999px;
+      float: left;
+      margin-right:5px;
+    }
+
+    a.slidesjs-next {
+      margin-right:10px;
+      background-position: -12px 0;
+    }
+
+    a:hover.slidesjs-next {
+      background-position: -12px -18px;
+    }
+
+    a.slidesjs-previous {
+      background-position: 0 0;
+    }
+
+    a:hover.slidesjs-previous {
+      background-position: 0 -18px;
+    }
+
+    a.slidesjs-play {
+      width:15px;
+      background-position: -25px 0;
+    }
+
+    a:hover.slidesjs-play {
+      background-position: -25px -18px;
+    }
+
+    a.slidesjs-stop {
+      width:18px;
+      background-position: -41px 0;
+    }
+
+    a:hover.slidesjs-stop {
+      background-position: -41px -18px;
+    }
+
+    .slidesjs-pagination {
+      margin: 6px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-image: url(img/pagination.png);
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 26px
+    }
+
+    #slides a:link,
+    #slides a:visited {
+      color: #333
+    }
+
+    #slides a:hover,
+    #slides a:active {
+      color: #9e2020
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+
+	
+
+/*sign up*/
+
+.signupinput {
+	margin-top:5px;
+	padding-left:5px;
+	width:200px;
+	height:22px;
+    border:1px solid #909090;
+    -webkit-transition: box-shadow 0.30s ease-in-out;   //只让box-shadow属性做过渡效果！
+    -moz-transition:  box-shadow 0.30s ease-in-out; 
+}
+
+
+/*form*/
+
+form{
+	overflow: hidden;
+}
+
+#box_form .form_line{
+	float: left; 
+	width: 605px;
+	margin-bottom: 6px; 
+}
+
+#box_form .input{
+	background: url(images/input_text.gif) left top no-repeat;
+	font-family: 'Roboto Slab', serif;
+	width: 583px;
+	padding: 7px 10px 7px 12px;
+	color: #C9C8C8;
+}
+
+#box_form textarea{
+	overflow: auto;
+	width: 583px !important;
+	height: 123px;
+	padding: 6px 10px 6px 12px;
+	background: url(images/message.gif) left top no-repeat;
+	font-family: 'Roboto Slab', serif;
+	font-size: 12px;
+	color: #C9C8C8;
+}
+
+fieldset {
+	padding: 0;
+}
+
+.but_submit {
+	float: left;
+	width: 136px;
+	height: 30px;
+	padding: 0px 0 0 0;
+	background: url(images/but_submit.gif) left bottom no-repeat;
+	font-family:  'Roboto Slab', serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.but_cleare {
+	float:right;
+}
+
+
+
+#slider-wrapper {
+    background:url(images/top.jpg) no-repeat;
+    padding-top: 60px;
+    width: 1038px;
+    height: 279px;
+    margin:0 auto;
+}
+
+#slider {
+	position:relative;
+    width: 1038px;
+    height: 279px;
+	background:url(images/loading.gif) no-repeat 50% 50%;
+}
+#slider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+}
+#slider a {
+	border:0;
+	display:block;
+}
+
+.nivo-controlNav {
+	position:absolute;
+	left: 440px;
+	bottom:-42px;
+
+}
+.nivo-controlNav a {
+	display:block;
+	background:url(images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+	display: none
+}
+.nivo-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.nivo-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(images/arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+a.nivo-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+a.nivo-prevNav {
+	left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family:  'Roboto Slab', serif;
+}
+.nivo-caption a { 
+    color:#efe9d1;
+    text-decoration:underline;
+}
+
+.showgraph{
+	float: left;
+	
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>FAQs</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery.featureList-1.0.0.js"></script>
+
+<script src="Cheng.js"></script> 
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+<style type="text/css">
+.backToTop {
+ display: none;
+ width: 38px;
+ height:30px;
+ line-height: 30px;
+ padding: 5px 0;
+ background-color: #8FD7F4;
+ color: #000;
+ font-size: 12px;
+ text-align: center;
+ font-weight: bold;
+ position: fixed;
+ _position: absolute;
+ right: 200px;
+ bottom: 300px;
+ _bottom: "auto";
+ cursor: pointer;
+ opacity: .6;
+ filter: Alpha(opacity=60);
+}
+</style>
+
+
+
+</head>
+
+
+
+
+<body>
+
+    <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;">
+                <div style="display:inline;float:left;  " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, Sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="buttonBackground">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="main" style="padding-top:190px;">
+    
+        <div><h3>   HERO Frequently Asked Questions:</h3></div>
+        <hr style="border:solid 1px black;">
+    <div style="padding:30px;width:700px;">
+        <div style="color:#0033CC;padding:5px;font-weight:bold;cursor:pointer;">
+            <a href="#q1">How does HERO work?</a><br><br>
+            <a href="#q2">Why does HERO matter?</a><br><br>
+            <a href="#q3">What should I do?</a><br><br>
+            <a href="#q4">What do the colors mean? How does the HERO Index work? </a><br><br>
+            <a href="#q5">How does HERO know information about my emissions? </a><br><br>
+            <a href="#q6">What are the benefits of using HERO?</a><br><br>
+            <a href="#q7">My location is not yet available in HERO. When will I be able to access my location?</a><br><br>
+            <a href="#q8">HERO provides suggested energy use times through a color coded system. How does HERO determine that certain times should display as red and others as green?</a><br><br>
+            <a href="#q9">How can I contribute?</a><br><br>
+            <a href="#q10">Who are the people behind this project?</a><br><br>
+            <a href="#q11">When the HERO index is red what does that mean?</a><br><br>
+            <a href="#q12">What is the difference between air quality and emissions?</a><br><br>
+            <a href="#q13">Why do the forecasted HERO Index and real-time HERO Index sometimes differ from one another? </a><br><br>
+        </div>
+    </div>
+    <div style="padding:30px;margin-left:50px;">
+        <big>  &nbsp;Tell Us</big><hr style="border:solid 1px #BEBEBE;width:250px;">
+        <br><a href="contact.html">If your question is not here, please text it to us.<br> HERO is here to help you!!</a><br>
+        <textarea rows="0" cols="0" style="border:1px solid #909090;margin-top:5px;height:100px;width:550px;padding:5px;"></textarea>
+        <br>
+        <input type="image" src="images/submitlong.png" width="257" height="45" name="Submit"  style="margin-top:40px;">
+    </div>
+    <hr style="border:solid 1px #BEBEBE;width:250px;">
+    <div style="padding:30px;width:800px;">
+        <p id="q1" style="font-weight:bold;">
+            <big><big>How does HERO work?</big></big>
+        </p><br>
+        <p >
+            HERO enters your location into the<a href="https://www.youtube.com/embed/BfLTY8sFiQ8"> LEEM (Locational Emissions Estimation Methodology) </a> algorithm developed at Wayne State University. LEEM links the locational marginal price (LMP) of electricity at an electricity node closest to your location both now and projected 24 hours into the future to estimate likely emissions from additional electricity consumption.
+        </p><br>
+        <p id="q2" style="font-weight:bold;">
+            <big><big>Why does HERO matter?</big></big>
+        </p><br>
+        <p >
+            HERO helps users reduce emissions from every day activities. By modifying your electricity use, you can reduce emissions of a range of pollutants depending on your environmental goals and priorities. By reducing emissions of sulfur dioxide (SO2), you are reducing acid rain potential. By reducing emissions of nitrogen oxides (NOx), you are reducing the amount of smog in your area. By reducing global warming potential (CO2e), you are limiting key greenhouse gas emissions that contribute to global warming. By reducing mercury (Hg) and lead (Pb) you are reducing the amount of harmful neurotoxins entering the environment.
+        </p><br>
+        <p id="q3" style="font-weight:bold;">
+            <big><big>What should I do?</big></big>
+        </p><br>
+        <p >
+            Sign up for your daily HERO index forecast and start building energy use habits that will last a lifetime. Consider shifting your use of washing machines, dryers, dishwashers, and charging electronics to “green” times of the day when your electricity is likely generated by renewable sources of electricity. Share your successes with friends, family, and social media.
+        </p><br>
+        <p id="q4" style="font-weight:bold;">
+            <big><big>What do the colors mean? How does the HERO Index work?</big></big>
+        </p><br>
+        <p >
+            The colors represent an index of emission rates. Each of the five pollutants addressed by HERO are color coded in 20% increments with dark green, light green, yellow, light red, and dark red indicating progressively larger emission rates with respect to the national, annual emissions of that pollutant. The larger the index, the more electricity consumption contributes to the nationwide release of that pollutant at any given moment. 
+        </p><br>
+        <p id="q5" style="font-weight:bold;">
+            <big><big>How does HERO know information about my emissions?</big></big>
+        </p><br>
+        <p >
+            HERO enters your location into the<a href="https://www.youtube.com/embed/BfLTY8sFiQ8"> LEEM (Locational Emissions Estimation Methodology)</a>  algorithm to determine the particular generator and fuel combination that will meet the next incremental demand for energy at your location. With knowledge of the generator/fuel combination, LEEM estimates your emissions using publicly available information
+        </p><br>
+        <p id="q6" style="font-weight:bold;">
+            <big><big>What are the benefits of using HERO?</big></big>
+        </p><br>
+        <p >
+            Using HERO allows you to time your electricity usage to correspond to your individual environmental preferences and priorities.
+        </p><br>
+        <p id="q7" style="font-weight:bold;">
+            <big><big>My location is not yet available in HERO. When will I be able to access my location?</big></big>
+        </p><br>
+        <p >
+            Our technology is currently operational for all locations within the 12-state Mid-Continental Independent System Operator (<a href="https://www.misoenergy.org/">MISO</a>) region. We are currently working on adding the states that belong to the <a href="http://pjm.com/">PJM</a> and <a href="http://www.nyiso.com/public/index.jsp">NYISO</a> regions. We anticipate HERO will be operational in these regions by February 2015. Other regions will be added following that.  Please note that customers served by municipal utilities are not currently part of our system. If you would like your electricity provider added to our system, please drop us a line.
+        </p><br>
+        <p id="q8" style="font-weight:bold;">
+            <big><big>HERO provides suggested energy use times through a color coded system. How does HERO determine that certain times should display as red and others as green?</big></big>
+        </p><br>
+        <p >
+            HERO tracks the marginal emissions of five pollutants that are emitted from electrical energy generating facilities (sulfur dioxide, nitrogen oxides, global warming potential measured as carbon dioxide equivalents, mercury, and lead.) Based on our knowledge of the emission rates of each of these pollutants for each type of generator/fuel combination, we have divided the range into five classifications with dark red corresponding to emission rates in the highest 20% of the possible range and dark green corresponding to the lowest 20%. If you can shift your energy use out of the red category and into the green, you will have reduced the emissions associated with your energy use considerably. 
+        </p><br>
+        <p id="q9" style="font-weight:bold;">
+            <big><big>How can I contribute?</big></big>
+        </p><br>
+        <p >
+            Drop us a line about your HERO experience. We are still in the beta testing stage and we want to hear from you. How has HERO changed your energy consumption? What feedback do you have for us? Contact us at: <a href="mailto:HERO@eng.wayne.edu">HERO@eng.wayne.edu.</a>
+        </p><br>
+        <p id="q10" style="font-weight:bold;">
+            <big><big>Who are the people behind this project?</big></big>
+        </p><br>
+        <p >
+            HERO and LEEM are products developed by a team lead by researchers at <a href="http://wayne.edu">Wayne State University </a> and funded by the <a href="http://glpf.org">Great Lakes Protection Fund</a>. Please visit our <a href="about.html">About Us </a> page to learn more.
+        </p><br>
+        <p id="q11" style="font-weight:bold;">
+            <big><big>When the HERO index is red what does that mean?</big></big>
+        </p><br>
+        <p >
+            A red signal indicates that based on a 2009 baseline, the marginal emissions of that pollutant are in the top 20% of expected emissions of that pollutant. Avoid as much electricity consumption as you can during “red” times to improve air quality in your community. 
+        </p><br>
+        <p id="q12" style="font-weight:bold;">
+            <big><big>What is the difference between air quality and emissions?</big></big>
+        </p><br>
+        <p >
+            Although air emissions directly impact air quality, they are distinct concepts.<br><br>
+            Air quality describes the current state of the ambient air. For example, levels of ozone, smog, or particulate matter that you may be breathing at a given moment are all reflective of air quality. Air quality is influenced by of a large number of factors including air emissions and weather conditions such as temperature, precipitation, and wind speed.<br><br>
+            Air emissions refers to the amount of pollution leaving an emissions source at a given moment in time. The number of pounds of carbon dioxide that are released by a particular electricity generation plant on a given day is an example of air emissions.
+        </p><br>
+        <p id="q13" style="font-weight:bold;">
+            <big><big>Why do the forecasted HERO Index and real-time HERO Index sometimes differ from one another? </big></big>
+        </p><br>
+        <p >
+            The forecasted HERO Index is based on "day ahead" electricity market pricing information published by the Midcontinent Independent System Operator (MISO). Day ahead pricing is estimated only and frequently differs from actual locational marginal prices. <br><br>
+
+            HERO relies on the real-time locational marginal price for the current HERO Index, which is published every five minutes. The real-time information is considered more accurate than the day ahead estimates, and an updated HERO Index can be obtained by reloading our site as needed.
+        </p><br>
+    </div>
+   
+   <script type="text/javascript">
+    (function() {
+        var $backToTopTxt = "Top↑", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+            .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+                $("html, body").animate({ scrollTop: 0 }, 120);
+        }), $backToTopFun = function() {
+            var st = $(document).scrollTop(), winh = $(window).height();
+            (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+                $backToTopEle.css("top", st + winh - 166);
+            }
+        };
+        $(window).bind("scroll", $backToTopFun);
+        $(function() { $backToTopFun(); });
+    })();
+    </script>
+       
+</div>
+
+
+
+
+
+
+    <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+</html>

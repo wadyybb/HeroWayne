@@ -1,0 +1,887 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Hero</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<script src="Cheng.js"></script> 
+    <script type="text/javascript" src="http://141.217.48.221/App/Tpl/hero_html/jquery-1.4.3.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:700,100' rel='stylesheet' type='text/css'>
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="stylesheet" href="nivo-slider.css" type="text/css" media="screen" /> -->
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
+  <script type="text/javascript">
+
+ var map;
+function initialize() {
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+ 
+
+	  
+	  
+	  function onPositionUpdate(position)
+        {
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+			initmark(lat,lng);
+			google.maps.event.addListener(map, 'click', function(event) {
+					window.location.href = "show.html?lan="+event.latLng.lat()+"&long="+event.latLng.lng();
+			});
+
+		initCallback();	
+			
+		}
+ 
+ function intcity(name,lan,long){
+	var L = new google.maps.LatLng(lan,long);
+	var marker = new google.maps.Marker({
+      position: L,
+      map: map,
+      title: name
+  	});
+	google.maps.event.addListener(marker, 'click', function() {
+    	window.location.href = "show.html?lan="+lan+"&long="+long;
+    	//map.setCenter(marker.getPosition());
+  });
+
+ }
+ 
+ 
+ function initmark(lat,lng){
+	var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(lat,lng)
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+	intcity('Location',lat,lng);
+}
+	  
+	  
+ 		
+function initCallback(instance) {
+	
+}
+	
+	
+	function base_setup(instance){
+
+}
+	
+function onFailUpdatePosition(error)
+        {   
+        	
+        }
+if(navigator.geolocation){
+	navigator.geolocation.getCurrentPosition(onPositionUpdate, onFailUpdatePosition);
+}else{
+	alert("ä¸æ”¯æŒLocation");
+}	
+	  
+
+	  
+
+  </script>
+  
+  
+
+
+
+
+
+
+
+</head>
+
+<body>
+     <!-- short dialog -->
+    <div id="shortcutoverlay">
+        <div id="shortcutclose">
+            <img src='images/x.png' alt='' style="cursor:pointer;" onclick="c();"/>
+        </div>
+         <div>
+              <p id="shortcutname">Current and forecasted HERO Index for <br>  <span id="shortcity" class="cityname">  </span> </p>
+              <table id="biaoge" style="margin-top:20px;"  class="shorttable">
+                    <tr >
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime1"> Current</p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px; border-right:#cccccc dashed 2px"> <p name="shortTime2"> 1 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime3"> 2 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime4"> 3 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime5"> 4 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;border-right:#cccccc dashed 2px"> <p name="shortTime6"> 5 </p> </td>
+                        <td style="border-bottom:#cccccc dashed 2px;"> <p name="shortTime7"> 6 </p></td>
+                    </tr>
+                    <tr>
+                        <!-- <td ><img id="shortImg1" src="images/blank.png"/></td>
+                        <td ><img id="shortImg2" src="images/blank.png"/></td>
+                        <td ><img id="shortImg3" src="images/blank.png"></td>
+                        <td ><img id="shortImg4" src="images/blank.png"></td>
+                        <td ><img id="shortImg5" src="images/blank.png"></td>
+                        <td ><img id="shortImg6" src="images/blank.png"></td>
+                        <td ><img id="shortImg7" src="images/blank.png"></td> -->
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_1" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_2" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_3" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_4" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_5" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px; ">
+                                <img id="sN_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_6" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                            <td>
+                                <div style="position:relative">
+                                <img id="sC_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:1; left:0px;">
+                                <img id="sS_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:2; left:0px;">
+                                <img id="sN_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:3; left:0px;">
+                                <img id="sP_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:4; left:0px;">
+                                <img id="sM_7" src="images/original.png" width="70" height="70"  style="position:absolute;z-index:5; left:0px;">
+                            </div>
+                            </td>
+                    </tr>
+              </table>
+              <!-- <input type = "button" value  ="close" onclick = "c()"/> -->
+         </div>
+    </div>
+    <div id="fade" onclick="c();"> </div>
+
+
+
+    <!-- header begins -->
+        <div id="main" style="margin-top:20px;overflow:hidden;">
+                <div style="display:inline;float:left;  " >
+                    <a href="index.html"><img src="images/herologo.jpg"  width="500" height = "90"/></a>
+                </div>
+                <!-- <Iframe src="shortcut.html"  width="540" height="90" scrolling="no" frameborder="0"></iframe>   -->
+                <div class="shortcut"  style="display:inline;float:left; "> 
+
+                    <div class="shortcutwords">Shortcut to HERO index for your location: </div>
+                    <div> 
+                        <span style="margin-left:45px;font-family: Arial, Helvetica, sans-serif;font-size: 15px;"> Zip Code: </span>
+                        <input  class="zipcode" type="text" value="" id="shortcutInput" onkeydown= "if(event.keyCode==13){shortbtn.click();}"/>
+                        <input  class="searchbtn" id="shortbtn" type="button" value="GO" onclick="shortcutsearch();" style="cursor:pointer;margin-left:20px;"/>
+                    </div>
+                </div>
+        </div>
+
+
+    <!-- middle -->
+<div id="aboutbuttonBackground" style="overflow:hidden;">
+    <div id="smaller">    
+        <div id="buttons">
+            <div  >
+                <div class="but_razd"><a href="index.html" ><span>Home</span></a></div>
+                <div class="but_razd"><a href="about.html" ><span>About Us</span></a></div>
+                <div class="but_razd"><a href="SignUp.html"><span>Sign Up</span></a></div>
+                <div class="tbut_razd"><a href="Actions.html"><span>Take Action</span></a></div>
+                <div class="ebut_razd"><a href="pollutants.html"><span>Emissions Info</span></a></div>
+                <div class="but_razd"><a href="FAQs.html"><span>FAQs</span></a></div>
+                <div class="but_razd"><a href="Contact.html" ><span>Contact Us</span></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    
+    
+    
+    
+    <div id="main" style="margin-top:90px;border:1px solid #8FD7F4;border-radius:1em;">
+    
+    <div style="padding:40px;">
+    	<div id="products">
+        
+        <div>
+              <big><h3>Click go to the air quality table: <input style="border-style: solid; border-width: 1px;" type="button" value="Show table" onclick="gotable();"/></h3></big>
+        </div>
+        
+        <div>
+        
+        
+        
+        
+         <h3><br>
+   All times are given as Central Standard Time
+   </h3>
+        
+        
+      <!--  <h2 style="float:right">Searching longitude and latitude is(</h2><h2 style="float:left" id="lngtidue"></h2><h2 style="float:left">,</h2><h2 style="float:left" id="latude"></h2><h2 style="float:right">)</h2> <h2 style="clear:both"></h2>    <br />   -->
+        
+        <br />
+        </div>
+        
+      
+    <div id="content">
+    	<div id="about">
+       		<div id="left">
+            	<div style="margin-left:30px;">
+<input style="border-style: solid; border-width: 1px;" type="text" value="" id="inputAddress" onkeydown= "if(event.keyCode==13){btn.click();}"/>
+<input style="border-style: solid; border-width: 1px;" id = "btn" type="button" value="Compare" onclick="comp();"/><br>
+              </div>
+                
+                <div id="map-canvas" style="height:150px; width: 1000px;">
+                	
+                </div>
+                
+                
+                
+            </div>
+       		
+            	
+               
+				
+                
+            
+            </div>
+            <div class="clear" style="height: 20px;"></div>
+        </div>
+    </div>
+
+
+      <br/>  <br/>  <br/>        
+       
+   <br/>    
+   <table width=100%>
+   <tr><td>
+              <big><h2 style="height: 20px; width:400px;font-size:25px;"  id="Place"></h2></big>
+             <div style="display:none;">
+             <h2>Location longitude and latitude is(</h2><h2  id="lngtidue"></h2><h2 >,</h2><h2  id="latude"></h2><h2 >)</h2> <h2 style="clear:both"></h2>   
+             </div>         
+             <div>       
+            <br />   <h2>LMP is </h2><h2 id="lmpValue"></h2><br/>
+              <h2>Nearest CPN is </h2><h2 id="CPNvalue"></h2><br/>            
+            </div>  
+   </td>
+   <td>
+             <big><h2 style="height: 20px; width:400px;font-size:25px;"  id="Place2"></h2></big>
+             <div style="display:none;">
+            <h2 >Compare longitude and latitude is(</h2><h2  id="lngtidue2"></h2><h2 >,</h2><h2  id="latude2"></h2><h2 >)</h2> <h2 style="clear:both"></h2>   
+             </div>         
+             <div>       
+	<br/>          
+        <h2>Compare LMP is </h2><h2 id="lmpValue2"></h2><br/>
+         <h2>Nearest CPN is </h2><h2 id="CPNvalue2"></h2><br/>            
+            </div>   
+   </td>
+   </tr>
+
+
+   <tr><td>
+      <div>
+             <H3>Emissions</H3>
+        </div>
+    <div  id="m0">
+  <div class="showgraph"><img id="location_o1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+  <div class="showgraph"><img id="location_o2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></p></div>
+  <div class="showgraph"><img id="location_o3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></p></div>
+  <div class="showgraph"><img id="location_o4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></p></div>
+  <div class="showgraph"><img id="location_o5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></p></div>
+  <div class="showgraph"><img id="location_o6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></p></div>
+  <div class="showgraph"><img id="location_o7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></p></div>
+  <div class="showgraph"><img id="location_o8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></p></div>
+<div style="clear:both"></div>
+</div>
+   </td>
+   <td>
+ <div>
+             <H3>Emissions</H3>
+             </div>
+   
+    <div  id="m2">
+  <div class="showgraph"><img id="compare_o1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+  <div class="showgraph"><img id="compare_o2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+  <div class="showgraph"><img id="compare_o3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+  <div class="showgraph"><img id="compare_o4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+  <div class="showgraph"><img id="compare_o5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+  <div class="showgraph"><img id="compare_o6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+  <div class="showgraph"><img id="compare_o7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+  <div class="showgraph"><img id="compare_o8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>  
+   </td>
+   </tr>
+
+   
+   <tr>
+   <td>
+               <div>
+             <H3>SO2</H3>
+             </div>
+        <div  id="m3">
+  <div class="showgraph"><img id="location_oc1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+  <div class="showgraph"><img id="location_oc2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+  <div class="showgraph"><img id="location_oc3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+  <div class="showgraph"><img id="location_oc4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+  <div class="showgraph"><img id="location_oc5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+  <div class="showgraph"><img id="location_oc6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+  <div class="showgraph"><img id="location_oc7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+  <div class="showgraph"><img id="location_oc8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div> 
+   </td>
+   <td>
+             <div>
+             <H3>SO2</H3>
+             </div>
+             <div  id="m3">
+  <div class="showgraph"><img id="compare_oc1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+  <div class="showgraph"><img id="compare_oc2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+  <div class="showgraph"><img id="compare_oc3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+  <div class="showgraph"><img id="compare_oc4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+  <div class="showgraph"><img id="compare_oc5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+  <div class="showgraph"><img id="compare_oc6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+  <div class="showgraph"><img id="compare_oc7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+  <div class="showgraph"><img id="compare_oc8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>   
+   </td>
+   </tr>
+
+
+   <tr><td>
+      <div>
+             <H3>NOx</H3>
+        </div>
+    <div  id="m2">
+  <div class="showgraph"><img id="location_ob1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+  <div class="showgraph"><img id="location_ob2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></p></div>
+  <div class="showgraph"><img id="location_ob3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></p></div>
+  <div class="showgraph"><img id="location_ob4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></p></div>
+  <div class="showgraph"><img id="location_ob5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></p></div>
+  <div class="showgraph"><img id="location_ob6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></p></div>
+  <div class="showgraph"><img id="location_ob7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></p></div>
+  <div class="showgraph"><img id="location_ob8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></p></div>
+<div style="clear:both"></div>
+</div>
+   </td>
+   <td>
+ <div>
+             <H3>NOx</H3>
+             </div>
+   
+    <div  id="m2">
+  <div class="showgraph"><img id="compare_ob1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+  <div class="showgraph"><img id="compare_ob2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+  <div class="showgraph"><img id="compare_ob3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+  <div class="showgraph"><img id="compare_ob4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+  <div class="showgraph"><img id="compare_ob5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+  <div class="showgraph"><img id="compare_ob6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+  <div class="showgraph"><img id="compare_ob7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+  <div class="showgraph"><img id="compare_ob8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>  
+   </td>
+   </tr>
+
+
+   <tr>
+   <td>
+             <div>
+             <H3>CO2e</H3>
+        </div>
+  <div  id="m1">
+	<div class="showgraph"><img id="location_oa1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+	<div class="showgraph"><img id="location_oa2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></p></div>
+	<div class="showgraph"><img id="location_oa3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></p></div>
+	<div class="showgraph"><img id="location_oa4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></p></div>
+	<div class="showgraph"><img id="location_oa5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></p></div>
+	<div class="showgraph"><img id="location_oa6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></p></div>
+	<div class="showgraph"><img id="location_oa7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></p></div>
+	<div class="showgraph"><img id="location_oa8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></p></div>
+<div style="clear:both"></div>
+</div>   
+   </td>
+   <td>
+               <div>
+             <H3>CO2e</H3>
+             </div>
+  <div  id="m1">
+  
+	<div class="showgraph"><img id="compare_oa1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+	<div class="showgraph"><img id="compare_oa2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+	<div class="showgraph"><img id="compare_oa3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+	<div class="showgraph"><img id="compare_oa4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+	<div class="showgraph"><img id="compare_oa5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+	<div class="showgraph"><img id="compare_oa6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+	<div class="showgraph"><img id="compare_oa7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+	<div class="showgraph"><img id="compare_oa8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>
+   </td>
+   </tr>
+   
+   
+   <tr>
+   <td>
+  <div>
+<h3>Mercury</h3>
+</div>
+
+
+    <div  id="m4">
+	<div class="showgraph"><img id="location_od1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+	<div class="showgraph"><img id="location_od2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+	<div class="showgraph"><img id="location_od3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+	<div class="showgraph"><img id="location_od4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+	<div class="showgraph"><img id="location_od5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+	<div class="showgraph"><img id="location_od6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+	<div class="showgraph"><img id="location_od7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+	<div class="showgraph"><img id="location_od8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div> 
+   </td>
+   <td>
+   <div>
+<h3>Mercury</h3>
+</div>
+    <div  id="m4">
+	<div class="showgraph"><img id="compare_od1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+	<div class="showgraph"><img id="compare_od2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+	<div class="showgraph"><img id="compare_od3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+	<div class="showgraph"><img id="compare_od4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+	<div class="showgraph"><img id="compare_od5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+	<div class="showgraph"><img id="compare_od6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+	<div class="showgraph"><img id="compare_od7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+	<div class="showgraph"><img id="compare_od8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>
+   </td>
+   </tr>
+   <tr>
+   <td>
+<div>   
+<h3>Lead</h3>
+</div>
+        <div  id="m5">
+	<div class="showgraph"><img id="location_oe1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+	<div class="showgraph"><img id="location_oe2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+	<div class="showgraph"><img id="location_oe3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+	<div class="showgraph"><img id="location_oe4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+	<div class="showgraph"><img id="location_oe5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+	<div class="showgraph"><img id="location_oe6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+	<div class="showgraph"><img id="location_oe7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+	<div class="showgraph"><img id="location_oe8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>       
+   </td>
+   <td>
+<div>
+<h3>Lead</h3>
+</div>               
+         <div  id="m5">
+	<div class="showgraph"><img id="compare_oe1" src="images/emissions graphs 4.2012/Emiss_axis2.png" /></div>
+	<div class="showgraph"><img id="compare_oe2" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue1"></div>
+	<div class="showgraph"><img id="compare_oe3" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue2"></div>
+	<div class="showgraph"><img id="compare_oe4" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue3"></div>
+	<div class="showgraph"><img id="compare_oe5" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue4"></div>
+	<div class="showgraph"><img id="compare_oe6" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue5"></div>
+	<div class="showgraph"><img id="compare_oe7" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue6"></div>
+	<div class="showgraph"><img id="compare_oe8" src="images/emissions graphs 4.2012/level0.png" /><p name="TimeValue7"></div>
+<div style="clear:both"></div>
+</div>   
+   </td>
+   </tr>               
+</table>
+<div style="clear:both;"></div>
+
+<div style="margin-left:30px;">
+<input style="border-style: solid; border-width: 1px;" type="text" value="" id="inputAddress" />
+<input style="border-style: solid; border-width: 1px;" type="button" value="Compare" onclick="comp();"/>
+</div>
+            
+            
+        </div>
+
+</div>
+
+    
+    
+        <!-- foot -->
+<div id="foot">
+    <div id="main">
+        <div style="float:left;padding:30px;">
+            Vision:<br>
+             Environmentally Sensitive Electricity Everywhere<br><br>
+             <a href="contact.html">Send Us a Suggestion ></a>
+        </div>
+        <div style="float:left;padding:30px;margin-left:100px;">
+            Connect With Us:<br><br>
+            <input type="image" src="images/u146.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='https://www.facebook.com/homeemissionsreadout/timeline'">
+            <input type="image" src="images/u150.png" name="Submit"  style="width:40px;height:40px;" onclick="location.href='#'">
+        </div>
+
+    </div>
+</div>
+    
+    
+    
+   
+    
+    
+     <script type="text/javascript">
+	 
+     
+	 
+	    //èŽ·å–APPä¼ å…¥çš„ç»çº¬åº¦å€?
+function getQueryString(name) {
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+var r = window.location.search.substr(1).match(reg);
+if (r != null) return unescape(r[2]); return null;
+
+}
+
+
+//åŠ¨æ€é€‰æ‹©å›¾ç‰‡
+function getLevel(dataInfo){
+if(null === dataInfo){
+return "images/emissions graphs 4.2012/level0.png";
+}
+switch(dataInfo){
+case 1:
+return "images/emissions graphs 4.2012/level1.png";
+case 2:
+return "images/emissions graphs 4.2012/level2.png";
+case 3:
+return "images/emissions graphs 4.2012/level3.png";
+
+case 4:
+return "images/emissions graphs 4.2012/level4.png";
+
+case 5:
+return "images/emissions graphs 4.2012/level5.png";
+
+}
+}
+
+
+
+	 //æŠŠç»çº¬åº¦ä¼ å…¥serverå¹¶èŽ·å–JSONå¹¶è§£æž?
+var latitude = getQueryString("lan");
+//alert(longitude);
+var longitude= getQueryString("long");
+//alert(latitude);
+
+
+
+var latId = document.getElementById("latude");
+latId.innerHTML = latitude;
+var lngId = document.getElementById("lngtidue");
+lngId.innerHTML = longitude;
+ 
+            
+			
+	 //first == true ; first time
+     //else second time
+     function getMsg(lng,lati,id_pre){
+		 $.getJSON('http://141.217.48.221/App/index.php',{"lng":lng,"lat":lati},function(json){
+		if(id_pre === "location"){
+			 var LocatID= document.getElementById("Place"); 
+			 LocatID.innerHTML =json.location;		         
+        }else{
+			 var LocatID= document.getElementById("Place2"); 
+			 LocatID.innerHTML =json.location; 
+       // LocatID.innerHTML =document.getElementById("inputAddress").value;          
+        }		
+			var T1ID= document.getElementsByName("TimeValue1");
+			for(i=0 ;i<T1ID.length;i++){
+
+			T1ID[i].innerHTML =json.leem_6_hours_ago_time;
+			};
+			
+			 var T2ID= document.getElementsByName("TimeValue2");
+			for(i=0 ;i<T2ID.length;i++){
+
+			T2ID[i].innerHTML =json.leem_4_hours_ago_time;
+			};
+			var T3ID= document.getElementsByName("TimeValue3");
+			for(i=0 ;i<T3ID.length;i++){
+
+			T3ID[i].innerHTML =json.leem_2_hours_ago_time;
+			}; 
+			 
+			 var T4ID= document.getElementsByName("TimeValue4");
+			for(i=0 ;i<T4ID.length;i++){
+
+			T4ID[i].innerHTML =json.current_time;
+			};
+			
+			
+			 var T5ID= document.getElementsByName("TimeValue5");
+			for(i=0 ;i<T5ID.length;i++){
+
+			T5ID[i].innerHTML =json.leem_2_hours_later_time;
+			};
+			var T6ID= document.getElementsByName("TimeValue6");
+			for(i=0 ;i<T6ID.length;i++){
+
+			T6ID[i].innerHTML =json.leem_4_hours_later_time;
+			};
+			
+			var T7ID= document.getElementsByName("TimeValue7");
+			for(i=0 ;i<T7ID.length;i++){
+
+			T7ID[i].innerHTML =json.leem_6_hours_later_time;
+			};
+			
+			
+			 
+      //Emissions
+            var a2 = document.getElementById(id_pre+"_o2");
+            a2.src=getLevel(json.leem_6_hours_ago_Aggregated_Level);
+                    var a3 = document.getElementById(id_pre+"_o3");
+            a3.src=getLevel(json.leem_4_hours_ago_Aggregated_Level);
+
+             var a4 = document.getElementById(id_pre+"_o4");
+            a4.src=getLevel(json.leem_2_hours_ago_Aggregated_Level);
+
+             var a5 = document.getElementById(id_pre+"_o5");
+            a5.src=getLevel(json.current_Aggregated_Level);
+
+             var a6 = document.getElementById(id_pre+"_o6");
+            a6.src=getLevel(json.leem_2_hours_later_Aggregated_Level);
+
+             var a7 = document.getElementById(id_pre+"_o7");
+            a7.src=getLevel(json.leem_4_hours_later_Aggregated_Level);
+
+             var a8 = document.getElementById(id_pre+"_o8");
+            a8.src=getLevel(json.leem_6_hours_later_Aggregated_Level);
+		
+
+
+		
+		//CO2
+			 var a2 = document.getElementById(id_pre+"_oa2");
+a2.src=getLevel(json.leem_6_hours_ago_time_CO2_emission);
+			  var a3 = document.getElementById(id_pre+"_oa3");
+a3.src=getLevel(json.leem_4_hours_ago_time_CO2_emission);
+
+ var a4 = document.getElementById(id_pre+"_oa4");
+a4.src=getLevel(json.leem_2_hours_ago_time_CO2_emission);
+
+ var a5 = document.getElementById(id_pre+"_oa5");
+a5.src=getLevel(json.current_CO2_emission);
+
+ var a6 = document.getElementById(id_pre+"_oa6");
+a6.src=getLevel(json.leem_2_hours_later_time_CO2_emission);
+
+ var a7 = document.getElementById(id_pre+"_oa7");
+a7.src=getLevel(json.leem_4_hours_later_time_CO2_emission);
+
+ var a8 = document.getElementById(id_pre+"_oa8");
+a8.src=getLevel(json.leem_6_hours_later_time_CO2_emission);
+
+ 
+ 
+ 
+ //NO2
+ 
+  var b2 = document.getElementById(id_pre+"_ob2");
+b2.src=getLevel(json.leem_6_hours_ago_time_NO2_emission);
+
+			  var b3 = document.getElementById(id_pre+"_ob3");
+b3.src=getLevel(json.leem_4_hours_ago_time_NO2_emission);
+
+ var b4 = document.getElementById(id_pre+"_ob4");
+b4.src=getLevel(json.leem_2_hours_ago_time_NO2_emission);
+
+ var b5 = document.getElementById(id_pre+"_ob5");
+b5.src=getLevel(json.current_NO2_emission);
+
+ var b6 = document.getElementById(id_pre+"_ob6");
+b6.src=getLevel(json.leem_2_hours_later_time_NO2_emission);
+
+ var b7 = document.getElementById(id_pre+"_ob7");
+b7.src=getLevel(json.leem_4_hours_later_time_NO2_emission);
+
+ var b8 = document.getElementById(id_pre+"_ob8");
+b8.src=getLevel(json.leem_6_hours_later_time_NO2_emission);
+		 
+		 //SO2
+ 
+  var c2 = document.getElementById(id_pre+"_oc2");
+c2.src=getLevel(json.leem_6_hours_ago_time_SO2_emission);
+
+			  var c3 = document.getElementById(id_pre+"_oc3");
+c3.src=getLevel(json.leem_4_hours_ago_time_SO2_emission);
+
+ var c4 = document.getElementById(id_pre+"_oc4");
+c4.src=getLevel(json.leem_2_hours_ago_time_SO2_emission);
+
+ var c5 = document.getElementById(id_pre+"_oc5");
+c5.src=getLevel(json.current_SO2_emission);
+
+ var c6 = document.getElementById(id_pre+"_oc6");
+c6.src=getLevel(json.leem_2_hours_later_time_SO2_emission);
+
+ var c7 = document.getElementById(id_pre+"_oc7");
+c7.src=getLevel(json.leem_4_hours_later_time_SO2_emission);
+
+ var c8 = document.getElementById(id_pre+"_oc8");
+c8.src=getLevel(json.leem_6_hours_later_time_SO2_emission);
+		 
+		 
+		 //Mercury
+ 
+  var d2 = document.getElementById(id_pre+"_od2");
+d2.src=getLevel(json.leem_6_hours_ago_time_Mercury_emission);
+
+			  var d3 = document.getElementById(id_pre+"_od3");
+d3.src=getLevel(json.leem_4_hours_ago_time_Mercury_emission);
+
+ var d4 = document.getElementById(id_pre+"_od4");
+d4.src=getLevel(json.leem_2_hours_ago_time_Mercury_emission);
+
+ var d5 = document.getElementById(id_pre+"_od5");
+d5.src=getLevel(json.current_Mercury_emission);
+
+ var d6 = document.getElementById(id_pre+"_od6");
+d6.src=getLevel(json.leem_2_hours_later_time_Mercury_emission);
+
+ var d7 = document.getElementById(id_pre+"_od7");
+d7.src=getLevel(json.leem_4_hours_later_time_Mercury_emission);
+
+ var d8 = document.getElementById(id_pre+"_od8");
+d8.src=getLevel(json.leem_6_hours_later_time_Mercury_emission);
+		 
+		 
+		 
+		  //Lead
+ 
+  var e2 = document.getElementById(id_pre+"_oe2");
+e2.src=getLevel(json.leem_6_hours_ago_time_Lead_emission);
+
+			  var e3 = document.getElementById(id_pre+"_oe3");
+e3.src=getLevel(json.leem_4_hours_ago_time_Lead_emission);
+
+ var e4 = document.getElementById(id_pre+"_oe4");
+e4.src=getLevel(json.leem_2_hours_ago_time_Lead_emission);
+
+ var e5 = document.getElementById(id_pre+"_oe5");
+e5.src=getLevel(json.current_Lead_emission);
+
+ var e6 = document.getElementById(id_pre+"_oe6");
+e6.src=getLevel(json.leem_2_hours_later_time_Lead_emission);
+
+ var e7 = document.getElementById(id_pre+"_oe7");
+e7.src=getLevel(json.leem_4_hours_later_time_Lead_emission);
+
+ var e8 = document.getElementById(id_pre+"_oe8");
+e8.src=getLevel(json.leem_6_hours_later_time_Lead_emission);	
+
+			var lmpId= (id_pre === "location") ? document.getElementById("lmpValue"):document.getElementById("lmpValue2");
+			lmpId.innerHTML = json.current_lmp;
+            
+            //èŽ·å–CPN
+            var CPNId= (id_pre === "location") ? document.getElementById("CPNvalue"):document.getElementById("CPNvalue2");
+			CPNId.innerHTML = json.cpn;
+			setMapRed(parseFloat(lati),parseFloat(lng));
+	 });		 
+}
+    getMsg(longitude,latitude,"location");
+	
+	
+function comp(){	
+	var inputLat;
+    var inputLng;
+var inputAddress = document.getElementById("inputAddress").value;
+$.get('https://maps.google.com/maps/api/geocode/xml',{"sensor":"false","address":inputAddress},function(xml){
+			
+	var locations = $(xml).find('location').each(function(){
+		var $loc = $(this);
+		var gLat = $loc.find("lat").text();
+		var gLng = $loc.find("lng").text();
+
+		inputLat = gLat;
+		inputLng = gLng;
+        
+        var latId = document.getElementById("latude2");
+latId.innerHTML = gLat;
+var lngId = document.getElementById("lngtidue2");
+lngId.innerHTML = gLng;
+	});
+	getMsg(inputLng,inputLat,"compare");
+ });
+}
+
+
+   function gotable(){
+  
+      var latitude = getQueryString("lan");
+    // alert(longitude);
+      var longitude= getQueryString("long");
+  
+     // alert(latitude+ "    "+longitude);
+      window.location.href = "table.html?lan="+latitude+"&long="+longitude;
+
+
+      // window.location.href = "show.html?lan="+inputLat+"&long="+inputLng;
+
+    }
+
+
+		  
+     </script> 
+    
+    
+    
+    
+    
+</body>
+</html>
